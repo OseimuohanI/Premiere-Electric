@@ -1,0 +1,616 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*----------Navigation----------*/
+#nav-bar{
+    background: #ffffff;
+    height: 70px;
+    line-height: 70px;
+}
+.navbar-brand img{
+    height: 60px;
+    padding-left: 30px;
+    max-width: 200px;
+}
+.navbar-nav li{
+    padding: 0 10px;
+}
+.navbar-nav li a{
+    text-align: left;
+}
+#nav-bar ul li a:hover{
+    color: turquoise!important;
+}
+.navbar{
+    background: #ffffff;
+}
+.navbar-toggler{
+    border: none!important;
+}
+.nav-link{
+    color: #555555!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+@media (max-width: 576px) {
+    .navbar-brand img{
+        height: 50px;
+        padding-left: 10px;
+    }
+}
+#slider{
+    width: 100%;
+    height: 70%;
+}
+/*----------About----------*/
+#about{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555555;
+}
+#about .btn{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.about-content{
+    padding-top: 20px;
+}
+.skills-bar{
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.progress-bar{
+    border-radius: 16px;
+}
+.progress{
+    border-radius: 16px !important;
+    margin-bottom: 20px;
+}
+/*----------Services----------*/
+#services{
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(image/close-up-of-wooden-plank-326311.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #efefef !important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#services h1{
+    text-align: center;
+    color: #efefef !important;
+    padding-bottom: 10px;
+}
+#services h1::after{
+    content: '';
+    background: #efefef;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+.services{
+    margin-top: 40px;
+}
+.icon{
+    font-size: 30px;
+    margin: 10px auto;
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+#services p{
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc;
+}
+.services .col-md-3{
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+.services .col-md-3:hover{
+    background: #007bff;
+    cursor: pointer;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,123,255,0.3);
+}
+/*----------Team Members----------*/
+#team{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555555;
+}
+h1{
+    text-align: center;
+    color: #555555;
+    padding-bottom: 10px;
+}
+h1::after{
+    content: '';
+    background: #007bff;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+.profile-pic{
+    margin-top: 25px;
+}
+.profile-pic .img-box{
+    opacity: 1;
+    display: block;
+    position: relative;
+}
+.profile-pic .img-box img{
+    filter: grayscale(1);
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.profile-pic .img-box img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+}
+.profile-pic h2{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #007bff !important;
+}
+.profile-pic h3{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+#team .fa{
+    height: 25px;
+    width: 25px;
+    color: #007bff !important;
+    background: #ffffff;
+    padding: 4px;
+    border-radius: 50%;
+}
+.img-box ul{
+    padding: 15px 0;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+.img-box ul li{
+    padding: 5px;
+    display: inline-block;
+}
+.img-box:hover ul{
+    opacity: 1;
+}
+.img-box ul, .img-box ul li{
+    transition: 0.5s;
+}
+/*----------Promo--------*/
+#promo{
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(image/close-up-of-wooden-plank-326311.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 100px;
+    font-family: sans-serif;
+    font-size: 38px;
+}
+/*----------Price Plans----------*/
+#price{
+    padding: 80px 0;
+    background: linear-gradient(180deg,#f6f8fb 0%,#eef2f7 100%);
+}
+.single-price{
+    margin: 12px 0;
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.single-price:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+}
+.price-head{
+    background: linear-gradient(135deg,#1f7ae0 0%,#23a6f0 100%);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+.price-head h2{
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.price-head p{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+#price span{
+    font-size: 14px;
+    font-weight: 500;
+}
+.price-content{
+    padding: 24px 24px 12px 24px;
+    flex: 1 1 auto;
+}
+.price-content ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.price-content ul li{
+    border-bottom: 1px solid #edf0f5;
+    padding: 12px 0;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.price-content ul li:last-child{
+    border: none;
+}
+.price-content ul li i{
+    color: #1f7ae0;
+    font-size: 14px;
+}
+.price-content ul li .fa-circle-xmark{
+    color: #c53030;
+}
+.price-button{
+    padding: 0 24px 24px 24px;
+}
+.buy-btn{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    background: linear-gradient(135deg,#1f7ae0 0%,#23a6f0 100%);
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(35,166,240,0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.buy-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(35,166,240,0.45);
+    filter: brightness(1.05);
+    color: #fff;
+}
+/*----------Testimonials----------*/
+#testimonials{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #f9f9f9;
+    color: #555555;
+}
+#testimonials h1{
+    text-align: center;
+    color: #555555;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+#testimonials h1::after{
+    content: '';
+    background: #007bff;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+.testimonial{
+    margin-top: 25px;
+}
+.testimonial-content{
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: 0.5s;
+}
+.testimonial-content:hover{
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.testimonial-content p:first-child{
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+}
+.rating{
+    color: #ff9500;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.testimonial-content h4{
+    color: #007bff;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+.client-title{
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+/*----------Contact Form----------*/
+#contact{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #f9f9f9;
+}
+#contact h1{
+    text-align: center;
+    color: #555555;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+#contact h1::after{
+    content: '';
+    background: #007bff;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+#contactForm .form-label{
+    color: #555555;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+#contactForm .form-control,
+#contactForm .form-select{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 12px;
+    transition: 0.3s;
+}
+#contactForm .form-control:focus,
+#contactForm .form-select:focus{
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+#contactForm .btn{
+    margin-top: 10px;
+}
+/*----------Footer----------*/
+#footer{
+    background: #2d5a7b;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    font-size: 14px;
+}
+#footer h5{
+    color: #ff9500;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#footer p{
+    color: #ccc;
+    line-height: 1.8;
+}
+#footer ul{
+    list-style: none;
+    padding: 0;
+}
+#footer ul li{
+    margin-bottom: 10px;
+}
+#footer ul li a{
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+#footer ul li a:hover{
+    color: #ff9500;
+}
+.social-icons{
+    margin-top: 15px;
+}
+.social-icons a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #007bff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    color: #fff;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.social-icons a:hover{
+    background: #ff9500;
+}
+.footer-bottom{
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+.footer-bottom p{
+    margin: 0;
+    color: #999;
+}
+/*----------Chatbot----------*/
+.chatbot-toggle{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg,#1f7ae0 0%,#23a6f0 100%);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(35,166,240,0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.chatbot-toggle:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(35,166,240,0.5);
+}
+.chatbot-modal{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 380px;
+    max-height: 550px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.chatbot-modal.active{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+.chatbot-header{
+    background: linear-gradient(135deg,#1f7ae0 0%,#23a6f0 100%);
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chatbot-header h5{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.chatbot-close{
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+.chatbot-close:hover{
+    background: rgba(255,255,255,0.2);
+}
+.chatbot-body{
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 400px;
+    background: #f8f9fa;
+}
+.chat-message{
+    margin-bottom: 16px;
+    display: flex;
+}
+.bot-message .message-content{
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 12px 12px 12px 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    max-width: 85%;
+}
+.user-message{
+    justify-content: flex-end;
+}
+.user-message .message-content{
+    background: linear-gradient(135deg,#1f7ae0 0%,#23a6f0 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 12px 12px 4px 12px;
+    max-width: 85%;
+}
+.message-content p{
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.chatbot-footer{
+    padding: 16px;
+    border-top: 1px solid #e7eaf0;
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    border-radius: 0 0 16px 16px;
+}
+.chatbot-input{
+    flex: 1;
+    border: 1px solid #e7eaf0;
+    border-radius: 24px;
+    padding: 10px 16px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+.chatbot-input:focus{
+    border-color: #1f7ae0;
+}
+.chatbot-send{
+    background: linear-gradient(135deg,#1f7ae0 0%,#23a6f0 100%);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.chatbot-send:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(35,166,240,0.4);
+}
+@media (max-width: 480px){
+    .chatbot-modal{
+        width: calc(100vw - 40px);
+        right: 20px;
+        bottom: 20px;
+    }
+    .chatbot-toggle{
+        right: 20px;
+        bottom: 20px;
+    }
+}

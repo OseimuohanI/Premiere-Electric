@@ -1,0 +1,21 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-icon" role="img" aria-label="Premiere Electric Icon">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a52;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d5a7b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main circle background -->
+  <circle cx="50" cy="50" r="48" fill="url(#iconGradient)"/>
+  
+  <!-- Outer circle border -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#ff9500" stroke-width="2" opacity="0.4"/>
+  
+  <!-- Lightning bolt centered -->
+  <path d="M 50 18 L 40 50 L 52 50 L 44 82 L 60 55 L 48 55 Z" fill="#ff9500" stroke="none"/>
+  
+  <!-- Accent plug symbol -->
+  <rect x="45" y="28" width="10" height="6" fill="#ff9500" opacity="0.6" rx="1"/>
+  <line x1="50" y1="34" x2="50" y2="42" stroke="#ff9500" stroke-width="1.5" opacity="0.6"/>
+</svg>

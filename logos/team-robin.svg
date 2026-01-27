@@ -1,0 +1,15 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Robin Henderson">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a3a52"/>
+      <stop offset="100%" stop-color="#2d5a7b"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#bg1)"/>
+  <circle cx="60" cy="52" r="24" fill="#f2f2f2"/>
+  <rect x="30" y="70" width="60" height="32" rx="14" fill="#f2f2f2"/>
+  <circle cx="52" cy="48" r="6" fill="#1a3a52"/>
+  <circle cx="68" cy="48" r="6" fill="#1a3a52"/>
+  <path d="M48 62 C54 68 66 68 72 62" stroke="#1a3a52" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M45 30 L60 20 L75 30" fill="#ff9500"/>
+</svg>

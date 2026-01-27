@@ -1,0 +1,75 @@
+// Program.cs - Startup configuration
+using FluentValidation;
+using PremierElectric.Application.DTOs;
+using PremierElectric.Application.Services;
+using PremierElectric.Application.Validators;
+using PremierElectric.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplicationBuilder.CreateBuilder(args);
+
+// Add services to the container
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Add DbContext
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<PremierElectricDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+// Add FluentValidation
+builder.Services.AddValidatorsFromAssemblyContaining<ContactSubmissionValidator>();
+builder.Services.AddScoped<IValidator<ContactSubmissionDto>, ContactSubmissionValidator>();
+
+// Add Application Services
+builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IChatService, ChatService>();
+
+// Add CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins(
+            "http://localhost:3000",
+            "http://localhost",
+            "http://localhost:5173",
+            "http://127.0.0.1",
+            "http://your-domain.com"  // Add your production domain
+        )
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
+
+// Add Logging
+builder.Services.AddLogging(config =>
+{
+    config.AddConsole();
+    config.AddDebug();
+});
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+app.UseCors("AllowFrontend");
+app.UseAuthorization();
+app.MapControllers();
+
+// Create database and run migrations on startup
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<PremierElectricDbContext>();
+    dbContext.Database.Migrate();
+}
+
+app.Run();
