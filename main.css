@@ -614,3 +614,16 @@ h1::after{
         bottom: 20px;
     }
 }
+/*----------Progress Bars----------*/
+.progress-bar.progress-95{
+    width: 95%;
+}
+.progress-bar.progress-90{
+    width: 90%;
+}
+.progress-bar.progress-88{
+    width: 88%;
+}
+.progress-bar.progress-92{
+    width: 92%;
+}
