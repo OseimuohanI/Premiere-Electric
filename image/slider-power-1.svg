@@ -8,7 +8,7 @@
   <rect width="1600" height="800" fill="url(#bg1)" />
 
   <!-- City skyline with buildings -->
-  <g fill="#1a1f24" opacity="0.7">
+  <g class="svg-buildings" fill="#1a1f24" opacity="0.7">
     <!-- Tall building 1 -->
     <rect x="80" y="380" width="100" height="180" />
     <!-- Windows -->
@@ -115,10 +115,10 @@
     </g>
   </g>
 
-  <path d="M0 560 L520 430 L980 520 L1600 470 L1600 800 L0 800 Z" fill="#2c3239" />
-  <path d="M0 520 L480 400 L980 480 L1600 430 L1600 520 L0 520 Z" fill="#353c45" opacity="0.9" />
+  <path class="svg-terrain" d="M0 560 L520 430 L980 520 L1600 470 L1600 800 L0 800 Z" fill="#2c3239" />
+  <path class="svg-terrain" d="M0 520 L480 400 L980 480 L1600 430 L1600 520 L0 520 Z" fill="#353c45" opacity="0.9" />
   <!-- Transmission Tower with Lattice Structure -->
-  <g stroke="#c5cdd6" stroke-width="14" stroke-linecap="round" fill="none">
+  <g class="svg-tower-main" stroke="#c5cdd6" stroke-width="14" stroke-linecap="round" fill="none">
     <!-- Main legs -->
     <path d="M880 670 L1050 210 L1150 210 L1320 670" />
 
@@ -134,7 +134,7 @@
   </g>
 
   <!-- Lattice cross-bracing (thinner) -->
-  <g stroke="#a8b2bd" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.9">
+  <g class="svg-tower-lattice" stroke="#a8b2bd" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.9">
     <!-- Diagonal bracing -->
     <path d="M920 580 L1000 480 M1000 480 L920 380" />
     <path d="M1280 580 L1200 480 M1200 480 L1280 380" />
@@ -148,7 +148,7 @@
   </g>
 
   <!-- Insulators on cross-arms -->
-  <g fill="#485460">
+  <g class="svg-insulators" fill="#485460">
     <circle cx="920" cy="580" r="12" />
     <circle cx="1280" cy="580" r="12" />
     <circle cx="960" cy="480" r="10" />
@@ -158,7 +158,7 @@
   </g>
 
   <!-- Power lines connecting to tower -->
-  <g stroke="#485460" stroke-width="5" fill="none" opacity="0.8">
+  <g class="svg-powerlines" stroke="#485460" stroke-width="5" fill="none" opacity="0.8">
     <!-- Lines from left side -->
     <path d="M0 585 L920 580" />
     <path d="M0 485 L960 480" />
@@ -181,9 +181,9 @@
   </g>
 
   <!-- Additional decorative power lines (sun glow area) -->
-  <g stroke="#ffb020" stroke-width="4" fill="none" opacity="0.85">
+  <g class="svg-sun-glow" stroke="#ffb020" stroke-width="4" fill="none" opacity="0.85">
     <path d="M0 240 C260 180 520 180 760 240" />
     <path d="M760 240 C980 300 1220 300 1600 240" />
   </g>
-  <circle cx="220" cy="220" r="90" fill="#ffb020" opacity="0.12" />
+  <circle class="svg-sun-glow" cx="220" cy="220" r="90" fill="#ffb020" opacity="0.12" />
 </svg>

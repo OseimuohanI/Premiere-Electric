@@ -14,7 +14,7 @@
   <rect width="1600" height="800" fill="url(#bg2)" />
 
   <!-- Abstract cityscape -->
-  <g fill="#1f2d42" opacity="0.6">
+  <g class="svg-buildings" fill="#1f2d42" opacity="0.6">
     <rect x="80" y="500" width="120" height="300" />
     <rect x="220" y="450" width="160" height="350" />
     <rect x="420" y="520" width="100" height="280" />
@@ -22,7 +22,7 @@
   </g>
 
   <!-- Circuit board pattern background -->
-  <g stroke="#3498db" stroke-width="3" fill="none" opacity="0.3">
+  <g class="svg-circuit" stroke="#3498db" stroke-width="3" fill="none" opacity="0.3">
     <path d="M50 150 L250 150 L250 250 L450 250" />
     <path d="M100 300 L300 300 L300 200 L500 200" />
     <path d="M150 450 L350 450 L350 350 L550 350" />
@@ -32,7 +32,7 @@
   </g>
 
   <!-- Smart Meter Device -->
-  <g>
+  <g class="svg-smart-meter">
     <!-- Meter body -->
     <rect x="900" y="300" width="380" height="480" rx="8" fill="#2c3e50" stroke="#34495e" stroke-width="4" />
     <rect x="920" y="320" width="340" height="440" rx="6" fill="#1a252f" />
@@ -67,7 +67,7 @@
   </g>
 
   <!-- Network connections radiating from meter -->
-  <g stroke="#22d3ee" stroke-width="3" fill="none" opacity="0.7">
+  <g class="svg-network" stroke="#22d3ee" stroke-width="3" fill="none" opacity="0.7">
     <path d="M1280 450 L1450 350" stroke-dasharray="8,6" />
     <path d="M1280 500 L1480 500" stroke-dasharray="8,6" />
     <path d="M1280 550 L1450 650" stroke-dasharray="8,6" />
@@ -77,7 +77,7 @@
   </g>
 
   <!-- Network nodes -->
-  <g fill="#22d3ee" opacity="0.8">
+  <g class="svg-nodes" fill="#22d3ee" opacity="0.8">
     <circle cx="1450" cy="350" r="12" />
     <circle cx="1480" cy="500" r="12" />
     <circle cx="1450" cy="650" r="12" />
@@ -87,7 +87,7 @@
   </g>
 
   <!-- Additional circuit patterns -->
-  <g stroke="#3498db" stroke-width="2" fill="none" opacity="0.4">
+  <g class="svg-circuit" stroke="#3498db" stroke-width="2" fill="none" opacity="0.4">
     <path d="M1300 150 L1500 150 L1500 250" />
     <path d="M100 600 L200 600 L200 700 L300 700" />
     <circle cx="1500" cy="150" r="6" fill="#3498db" />

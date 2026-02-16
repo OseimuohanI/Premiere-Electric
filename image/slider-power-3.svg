@@ -18,12 +18,12 @@
   <rect width="1600" height="800" fill="url(#sky)" />
 
   <!-- Sun glow -->
-  <ellipse cx="1350" cy="380" rx="220" ry="180" fill="url(#sun-glow)" opacity="0.2" />
-  <circle cx="1350" cy="380" r="100" fill="#fdc830" opacity="0.4" />
-  <circle cx="1350" cy="380" r="70" fill="#f7931e" opacity="0.6" />
+  <ellipse class="svg-sun-glow" cx="1350" cy="380" rx="220" ry="180" fill="url(#sun-glow)" opacity="0.2" />
+  <circle class="svg-sun-glow" cx="1350" cy="380" r="100" fill="#fdc830" opacity="0.4" />
+  <circle class="svg-sun-glow" cx="1350" cy="380" r="70" fill="#f7931e" opacity="0.6" />
 
   <!-- Clouds -->
-  <g fill="#2d4059" opacity="0.3">
+  <g class="svg-clouds" fill="#2d4059" opacity="0.3">
     <ellipse cx="300" cy="150" rx="90" ry="35" />
     <ellipse cx="250" cy="140" rx="70" ry="30" />
     <ellipse cx="900" cy="120" rx="110" ry="40" />
@@ -31,12 +31,12 @@
   </g>
 
   <!-- Rolling hills (layered) -->
-  <path d="M0 580 Q400 480 800 550 T1600 520 L1600 800 L0 800 Z" fill="#1f3a2f" opacity="0.6" />
-  <path d="M0 620 Q350 530 700 600 T1600 580 L1600 800 L0 800 Z" fill="#213b30" opacity="0.8" />
-  <path d="M0 680 Q300 620 600 660 T1600 650 L1600 800 L0 800 Z" fill="#243d32" />
+  <path class="svg-terrain" d="M0 580 Q400 480 800 550 T1600 520 L1600 800 L0 800 Z" fill="#1f3a2f" opacity="0.6" />
+  <path class="svg-terrain" d="M0 620 Q350 530 700 600 T1600 580 L1600 800 L0 800 Z" fill="#213b30" opacity="0.8" />
+  <path class="svg-terrain" d="M0 680 Q300 620 600 660 T1600 650 L1600 800 L0 800 Z" fill="#243d32" />
 
   <!-- Wind Turbine 1 (Background - Smallest) -->
-  <g opacity="0.5">
+  <g class="svg-turbine-1" opacity="0.5">
     <!-- Tower -->
     <path d="M1450 450 L1480 680" stroke="#2a3d34" stroke-width="12" fill="none" stroke-linecap="round" />
 
@@ -53,7 +53,7 @@
   </g>
 
   <!-- Wind Turbine 2 (Middle distance) -->
-  <g opacity="0.7">
+  <g class="svg-turbine-2" opacity="0.7">
     <!-- Tower -->
     <path d="M850 380 L900 680" stroke="#314d3f" stroke-width="18" fill="none" stroke-linecap="round" />
 
@@ -70,7 +70,7 @@
   </g>
 
   <!-- Wind Turbine 3 (Foreground - Largest, main focus) -->
-  <g>
+  <g class="svg-turbine-3">
     <!-- Tower -->
     <path d="M350 280 L420 710" stroke="#3d5a49" stroke-width="26" fill="none" stroke-linecap="round" />
     <path d="M360 300 L410 680" stroke="#4a6857" stroke-width="8" fill="none" opacity="0.5" />
@@ -95,7 +95,7 @@
   </g>
 
   <!-- Wind Turbine 4 (Right side, medium distance) -->
-  <g opacity="0.8">
+  <g class="svg-turbine-4" opacity="0.8">
     <!-- Tower -->
     <path d="M1100 350 L1150 680" stroke="#354d42" stroke-width="20" fill="none" stroke-linecap="round" />
 
@@ -112,7 +112,7 @@
   </g>
 
   <!-- Distant turbines (tiny silhouettes on horizon) -->
-  <g opacity="0.3">
+  <g class="svg-distant-turbines" opacity="0.3">
     <line x1="550" y1="540" x2="560" y2="600" stroke="#1a2d24" stroke-width="4" />
     <circle cx="555" cy="540" r="3" fill="#1a2d24" />
     <line x1="553" y1="538" x2="553" y2="500" stroke="#d0d8d5" stroke-width="2" />

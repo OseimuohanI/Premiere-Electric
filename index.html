@@ -117,7 +117,7 @@
                   <p>We proudly serve over $100,000 worth of existing customers from our predecessor companies, Gardner and Miller. Our commitment to quality workmanship and customer satisfaction has earned us the trust of the community.</p>
                   <p>Founded with a vision to provide exceptional electrical services, we combine years of industry experience with modern techniques and safety standards. Our owner-operated model ensures personal attention to every project.</p>
                 </div>
-                <button type="button" class="btn btn-primary" data-reveal data-reveal-delay="200">Learn More →</button>
+                <a href="about.html" class="btn btn-primary" data-reveal data-reveal-delay="200">Learn More →</a>
               </div>
               <div class="col-md-6 skills-bar" data-reveal data-reveal-delay="300">
                 <p>Residential Electrical</p>
@@ -693,6 +693,49 @@
               Error submitting form: ${error.message}
             </div>
           `;
+        }
+      });
+    </script>
+
+    <!-- Cursor Trail Effect -->
+    <script>
+      const cursorTrail = [];
+      const maxTrailLength = 15;
+      let lastX = 0;
+      let lastY = 0;
+
+      document.addEventListener('mousemove', (e) => {
+        const dx = e.clientX - lastX;
+        const dy = e.clientY - lastY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        // Only create trail if mouse moved enough (prevents overcrowding)
+        if (distance > 10) {
+          const trail = document.createElement('div');
+          trail.className = 'cursor-trail';
+          trail.style.left = e.clientX + 'px';
+          trail.style.top = e.clientY + 'px';
+
+          document.body.appendChild(trail);
+          cursorTrail.push(trail);
+
+          // Remove old trail elements
+          if (cursorTrail.length > maxTrailLength) {
+            const oldTrail = cursorTrail.shift();
+            oldTrail.remove();
+          }
+
+          // Animate and remove after animation
+          setTimeout(() => {
+            trail.remove();
+            const index = cursorTrail.indexOf(trail);
+            if (index > -1) {
+              cursorTrail.splice(index, 1);
+            }
+          }, 800);
+
+          lastX = e.clientX;
+          lastY = e.clientY;
         }
       });
     </script>

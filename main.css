@@ -76,6 +76,8 @@
     margin-bottom: 20px;
     line-height: 1.3;
     letter-spacing: 0.5px;
+    animation: slideInFromTop 1.7s ease forwards;
+    opacity: 0;
 }
 .carousel-caption h5 .accent{
     color: #007bff;
@@ -705,4 +707,188 @@ h1::after{
 }
 .progress-bar.progress-92{
     width: 92%;
+}
+/*----------SVG Animations----------*/
+.svg-buildings{
+    animation: fadeInUp 1.2s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+.svg-terrain{
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+.svg-tower-main path,
+.svg-tower-main line{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawPath 2s ease forwards;
+    animation-delay: 0.9s;
+}
+.svg-tower-lattice path{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawPath 1.5s ease forwards;
+    animation-delay: 1.5s;
+}
+.svg-insulators{
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+.svg-powerlines path{
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: drawPath 2.5s ease forwards;
+    animation-delay: 2.3s;
+}
+.svg-sun-glow{
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+@keyframes drawPath{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 0.7;
+        transform: translateY(0);
+    }
+}
+/*----------SVG Slider 2 Animations (Smart Meter)----------*/
+.svg-circuit path{
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: drawPath 2s ease forwards;
+    animation-delay: 0.5s;
+}
+.svg-smart-meter{
+    animation: scaleIn 1s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+.svg-network path{
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: drawPath 1.5s ease forwards;
+    animation-delay: 1.8s;
+}
+.svg-nodes circle{
+    animation: pulseNode 0.6s ease forwards;
+    opacity: 0;
+}
+.svg-nodes circle:nth-child(1){ animation-delay: 2.2s; }
+.svg-nodes circle:nth-child(2){ animation-delay: 2.3s; }
+.svg-nodes circle:nth-child(3){ animation-delay: 2.4s; }
+.svg-nodes circle:nth-child(4){ animation-delay: 2.5s; }
+.svg-nodes circle:nth-child(5){ animation-delay: 2.6s; }
+.svg-nodes circle:nth-child(6){ animation-delay: 2.7s; }
+
+/*----------SVG Slider 3 Animations (Wind Turbines)----------*/
+.svg-clouds{
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+.svg-turbine-1{
+    animation: fadeInScale 1.2s ease forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+}
+.svg-turbine-2{
+    animation: fadeInScale 1.2s ease forwards;
+    animation-delay: 1.2s;
+    opacity: 0;
+}
+.svg-turbine-3{
+    animation: fadeInScale 1.2s ease forwards;
+    animation-delay: 1.6s;
+    opacity: 0;
+}
+.svg-turbine-4{
+    animation: fadeInScale 1.2s ease forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+.svg-distant-turbines{
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.4s;
+    opacity: 0;
+}
+
+@keyframes scaleIn{
+    from{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes pulseNode{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 0.8;
+        transform: scale(1);
+    }
+}
+@keyframes fadeInScale{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes slideInFromTop{
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*----------Cursor Trail Effect----------*/
+.cursor-trail{
+    position: fixed;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #007bff 0%, rgba(0,123,255,0.4) 50%, transparent 100%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    animation: cursorFade 0.8s ease-out forwards;
+}
+@keyframes cursorFade{
+    0%{
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
 }
