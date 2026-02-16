@@ -514,6 +514,7 @@
 
     <!-- Chatbot Handler -->
     <script>
+      // Always use Railway backend, fallback to local responses if unavailable
       const apiBaseUrl = (() => {
         const meta = document.querySelector('meta[name="api-base-url"]');
         const value = meta?.content?.trim() || '';
@@ -560,8 +561,8 @@
 
       function getBotResponse(userMessage) {
         const message = userMessage.toLowerCase();
-        
-        // Send to backend API
+
+        // Always try Railway backend first
         return fetch(buildApiUrl('/api/chat/message'), {
           method: 'POST',
           headers: {
@@ -573,7 +574,12 @@
             userContext: window.location.pathname
           })
         })
-        .then(response => response.json())
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
         .then(data => {
           if (data.success && data.sessionId) {
             sessionStorage.setItem('chatSessionId', data.sessionId);
@@ -581,8 +587,7 @@
           return data.botResponse || data.message;
         })
         .catch(error => {
-          console.error('Chat error:', error);
-          // Fallback to local responses if API fails
+          // If Railway is unavailable, use fallback responses
           return getFallbackResponse(message);
         });
       }
