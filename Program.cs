@@ -33,11 +33,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy.WithOrigins(
-            "http://localhost:3000",
-            "http://localhost",
-            "http://localhost:5173",
-            "http://127.0.0.1",
-            "http://your-domain.com"  // Add your production domain
+            "https://charming-paprenjak-ca099d.netlify.app/",
+            "http://localhost"
         )
         .AllowAnyMethod()
         .AllowAnyHeader();
