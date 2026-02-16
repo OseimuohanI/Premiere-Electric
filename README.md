@@ -1,27 +1,49 @@
-https://charming-paprenjak-ca099d.netlify.app/
-## Database Migrations
+## Premiere Electric
 
-Automatic migrations are **disabled by default** on startup to prevent database errors when running without a valid connection string (e.g., on Railway).
+Premiere Electric is a full-stack web app for an electrical contractor with a static frontend and an ASP.NET Core API.
 
-### Enable migrations on Railway
+Live site: https://charming-paprenjak-ca099d.netlify.app/
 
-Set the environment variable in Railway dashboard:
+## Stack / Tech Used
 
-- **Variable**: `ENABLE_MIGRATIONS`
-- **Value**: `true`
+- HTML, CSS, JavaScript (static frontend)
+- ASP.NET Core 8 (C#) API
+- Entity Framework Core (SQL Server)
+- Railway (API hosting)
+- Netlify (frontend hosting)
 
-This allows `dbContext.Database.Migrate()` to run on app startup, applying any pending migrations to your database.
+## Setup
 
-**Important**: Ensure your `ConnectionStrings__DefaultConnection` is valid **before** enabling this to avoid startup failures.
-
-### Run migrations manually (development)
-
-```bash
-dotnet ef database update
-```
-
-### Create a new migration
+### 1) Install dependencies
 
 ```bash
-dotnet ef migrations add MigrationName
+dotnet restore
 ```
+
+### 2) Configure environment variables
+
+Set these in your shell or hosting provider:
+
+```
+ConnectionStrings__DefaultConnection=<sql-connection-string>
+EmailSettings__Enabled=true|false
+EmailSettings__Host=<smtp-host>
+EmailSettings__Port=587
+EmailSettings__Username=<smtp-username>
+EmailSettings__Password=<smtp-password>
+EmailSettings__EnableSsl=true
+EmailSettings__AdminEmail=admin@example.com
+EmailSettings__FromEmail=from@example.com
+```
+
+### 3) Run the API
+
+```bash
+dotnet run
+```
+
+The API will listen on the port configured by `ASPNETCORE_URLS` or the default development port.
+
+### 4) Run the frontend
+
+Open `index.html` directly or serve it with any static server.
