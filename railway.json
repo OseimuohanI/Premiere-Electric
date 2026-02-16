@@ -1,8 +1,5 @@
 {
   "build": {
     "builder": "RAILPACK"
-  },
-  "deploy": {
-    "startCommand": "dotnet out/PremiereElectric.dll"
   }
 }
