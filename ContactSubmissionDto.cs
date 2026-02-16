@@ -1,5 +1,5 @@
 // ContactSubmissionDto.cs - Data Transfer Object
-namespace PremierElectric.Application.DTOs
+namespace PremierElectric.Api.DTOs
 {
     public class ContactSubmissionDto
     {

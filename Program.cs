@@ -1,8 +1,8 @@
 // Program.cs - Startup configuration
 using FluentValidation;
-using PremierElectric.Application.DTOs;
-using PremierElectric.Application.Services;
-using PremierElectric.Application.Validators;
+using PremierElectric.Api.DTOs;
+using PremierElectric.Api.Services;
+using PremierElectric.Api.Validators;
 using PremierElectric.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 

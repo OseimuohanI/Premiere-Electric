@@ -1,9 +1,9 @@
 // IEmailService.cs and EmailService.cs - Email Sending
 using System.Net;
 using System.Net.Mail;
-using PremierElectric.Application.DTOs;
+using PremierElectric.Api.DTOs;
 
-namespace PremierElectric.Application.Services
+namespace PremierElectric.Api.Services
 {
     public interface IEmailService
     {
@@ -26,20 +26,21 @@ namespace PremierElectric.Application.Services
         {
             try
             {
-                var smtpServer = _configuration["EmailSettings:SmtpServer"];
-                var smtpPort = int.Parse(_configuration["EmailSettings:SmtpPort"]);
-                var senderEmail = _configuration["EmailSettings:SenderEmail"];
-                var senderPassword = _configuration["EmailSettings:SenderPassword"];
-
-                using (var client = new SmtpClient(smtpServer, smtpPort))
+                if (!TryGetEmailSettings(out var settings, out var error))
                 {
-                    client.EnableSsl = true;
-                    client.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                    _logger.LogWarning("Email sending disabled or misconfigured: {Error}", error);
+                    return false;
+                }
+
+                using (var client = new SmtpClient(settings.SmtpServer, settings.SmtpPort))
+                {
+                    client.EnableSsl = settings.EnableSsl;
+                    client.Credentials = new NetworkCredential(settings.SenderEmail, settings.SenderPassword);
 
                     var subject = "We Received Your Message - Premiere Electric";
                     var body = GenerateCustomerEmailBody(contact, ticketId);
 
-                    var mailMessage = new MailMessage(senderEmail, contact.Email, subject, body)
+                    var mailMessage = new MailMessage(settings.SenderEmail, contact.Email, subject, body)
                     {
                         IsBodyHtml = true
                     };
@@ -60,21 +61,21 @@ namespace PremierElectric.Application.Services
         {
             try
             {
-                var smtpServer = _configuration["EmailSettings:SmtpServer"];
-                var smtpPort = int.Parse(_configuration["EmailSettings:SmtpPort"]);
-                var senderEmail = _configuration["EmailSettings:SenderEmail"];
-                var senderPassword = _configuration["EmailSettings:SenderPassword"];
-                var adminEmail = _configuration["EmailSettings:AdminEmail"];
-
-                using (var client = new SmtpClient(smtpServer, smtpPort))
+                if (!TryGetEmailSettings(out var settings, out var error))
                 {
-                    client.EnableSsl = true;
-                    client.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                    _logger.LogWarning("Email sending disabled or misconfigured: {Error}", error);
+                    return false;
+                }
+
+                using (var client = new SmtpClient(settings.SmtpServer, settings.SmtpPort))
+                {
+                    client.EnableSsl = settings.EnableSsl;
+                    client.Credentials = new NetworkCredential(settings.SenderEmail, settings.SenderPassword);
 
                     var subject = $"New Contact Form Submission - {contact.Subject}";
                     var body = GenerateAdminEmailBody(contact, ticketId);
 
-                    var mailMessage = new MailMessage(senderEmail, adminEmail, subject, body)
+                    var mailMessage = new MailMessage(settings.SenderEmail, settings.AdminEmail, subject, body)
                     {
                         IsBodyHtml = true
                     };
@@ -146,6 +147,56 @@ namespace PremierElectric.Application.Services
                     <p><em>Submitted at: {DateTime.UtcNow:F}</em></p>
                 </body>
                 </html>";
+        }
+
+        private bool TryGetEmailSettings(out EmailSettings settings, out string error)
+        {
+            settings = new EmailSettings
+            {
+                Enabled = _configuration.GetValue<bool>("EmailSettings:Enabled"),
+                EnableSsl = _configuration.GetValue<bool>("EmailSettings:EnableSsl", true),
+                SmtpServer = _configuration["EmailSettings:SmtpServer"],
+                SenderEmail = _configuration["EmailSettings:SenderEmail"],
+                SenderPassword = _configuration["EmailSettings:SenderPassword"],
+                AdminEmail = _configuration["EmailSettings:AdminEmail"]
+            };
+
+            if (!settings.Enabled)
+            {
+                error = "EmailSettings:Enabled is false";
+                return false;
+            }
+
+            if (!int.TryParse(_configuration["EmailSettings:SmtpPort"], out var smtpPort))
+            {
+                error = "EmailSettings:SmtpPort is missing or invalid";
+                return false;
+            }
+
+            settings.SmtpPort = smtpPort;
+
+            if (string.IsNullOrWhiteSpace(settings.SmtpServer) ||
+                string.IsNullOrWhiteSpace(settings.SenderEmail) ||
+                string.IsNullOrWhiteSpace(settings.SenderPassword) ||
+                string.IsNullOrWhiteSpace(settings.AdminEmail))
+            {
+                error = "EmailSettings are incomplete";
+                return false;
+            }
+
+            error = string.Empty;
+            return true;
+        }
+
+        private sealed class EmailSettings
+        {
+            public bool Enabled { get; set; }
+            public bool EnableSsl { get; set; } = true;
+            public string SmtpServer { get; set; } = string.Empty;
+            public int SmtpPort { get; set; }
+            public string SenderEmail { get; set; } = string.Empty;
+            public string SenderPassword { get; set; } = string.Empty;
+            public string AdminEmail { get; set; } = string.Empty;
         }
     }
 }

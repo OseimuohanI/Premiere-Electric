@@ -1,10 +1,10 @@
 // ContactController.cs - API Controller
 using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
-using PremierElectric.Application.DTOs;
-using PremierElectric.Application.Services;
+using PremierElectric.Api.DTOs;
+using PremierElectric.Api.Services;
 
-namespace PremierElectric.API.Controllers
+namespace PremierElectric.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,8 +1,9 @@
 // IContactService.cs and ContactService.cs - Business Logic
-using PremierElectric.Application.DTOs;
+using PremierElectric.Api.DTOs;
 using PremierElectric.Domain.Entities;
+using PremierElectric.Infrastructure.Data;
 
-namespace PremierElectric.Application.Services
+namespace PremierElectric.Api.Services
 {
     public interface IContactService
     {

@@ -1,8 +1,8 @@
 // ContactSubmissionValidator.cs - FluentValidation
 using FluentValidation;
-using PremierElectric.Application.DTOs;
+using PremierElectric.Api.DTOs;
 
-namespace PremierElectric.Application.Validators
+namespace PremierElectric.Api.Validators
 {
     public class ContactSubmissionValidator : AbstractValidator<ContactSubmissionDto>
     {
