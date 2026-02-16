@@ -62,11 +62,14 @@ app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
 
-// Create database and run migrations on startup
-using (var scope = app.Services.CreateScope())
+// Automatic migrations are disabled by default. To re-enable, set ENABLE_MIGRATIONS=true.
+if (string.Equals(Environment.GetEnvironmentVariable("ENABLE_MIGRATIONS"), "true", StringComparison.OrdinalIgnoreCase))
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<PremierElectricDbContext>();
-    dbContext.Database.Migrate();
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<PremierElectricDbContext>();
+        dbContext.Database.Migrate();
+    }
 }
 
 app.Run();
