@@ -902,3 +902,153 @@ h1::after{
         transform: translate(-50%, -50%) scale(0.2);
     }
 }
+/*----------Mobile Optimizations----------*/
+@media (max-width: 768px){
+    /* Add spacing between sections */
+    #about,
+    #services,
+    #team,
+    #promo,
+    #price,
+    #testimonials,
+    #contact{
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    /* About section improvements */
+    #about .about-content{
+        margin-bottom: 30px;
+    }
+    #about .skills-bar{
+        margin-bottom: 25px;
+    }
+
+    /* Service cards spacing */
+    #services .col-md-3{
+        margin-bottom: 30px;
+    }
+    #services .col-md-3:last-child{
+        margin-bottom: 0;
+    }
+
+    /* Team member spacing */
+    #team .profile-pic{
+        margin-bottom: 40px;
+    }
+    #team .profile-pic:last-child{
+        margin-bottom: 0;
+    }
+
+    /* Promo section centered properly */
+    #promo{
+        padding: 60px 20px !important;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #promo p{
+        font-size: 28px !important;
+        line-height: 1.4;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+    #promo .btn{
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+
+    /* Price plans spacing */
+    #price .col-md-4{
+        margin-bottom: 30px;
+    }
+    #price .col-md-4:last-child{
+        margin-bottom: 0;
+    }
+
+    /* Testimonial spacing */
+    #testimonials .col-md-6{
+        margin-bottom: 30px;
+    }
+    #testimonials .col-md-6:last-child{
+        margin-bottom: 0;
+    }
+
+    /* Contact form improvements */
+    #contact{
+        padding: 40px 15px !important;
+    }
+    #contact h1{
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    #contact .form-control{
+        margin-bottom: 20px;
+    }
+
+    /* Better heading sizes */
+    h1{
+        font-size: 32px !important;
+    }
+    h3{
+        font-size: 20px !important;
+        margin-bottom: 15px;
+    }
+
+    /* Icon spacing */
+    .icon{
+        margin-bottom: 20px;
+    }
+
+    /* Navbar improvements */
+    .navbar{
+        padding: 10px 15px !important;
+    }
+}
+
+@media (max-width: 480px){
+    /* Extra small screens - more compact */
+    #about,
+    #services,
+    #team,
+    #promo,
+    #price,
+    #testimonials,
+    #contact{
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    /* Promo section extra small */
+    #promo{
+        padding: 50px 15px !important;
+    }
+    #promo p{
+        font-size: 24px !important;
+        line-height: 1.3;
+        margin-bottom: 20px;
+    }
+    #promo .btn{
+        font-size: 14px;
+        padding: 10px 25px;
+    }
+
+    /* Smaller headings */
+    h1{
+        font-size: 28px !important;
+        margin-bottom: 25px !important;
+    }
+    h3{
+        font-size: 18px !important;
+    }
+
+    /* Service and team card spacing */
+    #services .col-md-3,
+    #team .profile-pic,
+    #price .col-md-4,
+    #testimonials .col-md-6{
+        margin-bottom: 25px;
+    }
+}
