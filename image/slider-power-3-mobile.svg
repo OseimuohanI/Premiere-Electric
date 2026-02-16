@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1000" role="img" aria-label="Wind turbine farm at sunset generating renewable energy">
+  <defs>
+    <linearGradient id="sky-mobile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2332" />
+      <stop offset="30%" stop-color="#3d5a80" />
+      <stop offset="60%" stop-color="#ee6c4d" />
+      <stop offset="80%" stop-color="#f7931e" />
+      <stop offset="100%" stop-color="#fdc830" />
+    </linearGradient>
+    <linearGradient id="sun-glow-mobile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6b35" />
+      <stop offset="50%" stop-color="#f7931e" />
+      <stop offset="100%" stop-color="#fdc830" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky gradient with sunset -->
+  <rect width="600" height="1000" fill="url(#sky-mobile)" />
+
+  <!-- Sun glow -->
+  <ellipse cx="480" cy="280" rx="150" ry="120" fill="url(#sun-glow-mobile)" opacity="0.2" />
+  <circle cx="480" cy="280" r="70" fill="#fdc830" opacity="0.4" />
+  <circle cx="480" cy="280" r="50" fill="#f7931e" opacity="0.6" />
+
+  <!-- Clouds -->
+  <g fill="#2d4059" opacity="0.3">
+    <ellipse cx="150" cy="100" rx="60" ry="25" />
+    <ellipse cx="120" cy="90" rx="50" ry="22" />
+    <ellipse cx="400" cy="120" rx="70" ry="28" />
+    <ellipse cx="370" cy="110" rx="55" ry="24" />
+  </g>
+
+  <!-- Rolling hills (layered) -->
+  <path d="M0 700 Q150 650 300 680 T600 670 L600 1000 L0 1000 Z" fill="#1f3a2f" opacity="0.6" />
+  <path d="M0 760 Q130 700 260 740 T600 730 L600 1000 L0 1000 Z" fill="#213b30" opacity="0.8" />
+  <path d="M0 840 Q110 790 220 820 T600 810 L600 1000 L0 1000 Z" fill="#243d32" />
+
+  <!-- Wind Turbine 1 (Background - Smallest) -->
+  <g opacity="0.5">
+    <!-- Tower -->
+    <path d="M510 550 L530 850" stroke="#2a3d34" stroke-width="10" fill="none" stroke-linecap="round" />
+
+    <!-- Nacelle -->
+    <ellipse cx="520" cy="550" rx="14" ry="10" fill="#2a3d34" />
+
+    <!-- Blades (rotated position) -->
+    <g transform="translate(520, 550)">
+      <rect x="-2" y="-70" width="4" height="70" fill="#e8f1f0" opacity="0.7" rx="2" />
+      <rect x="-2" y="-70" width="4" height="70" fill="#e8f1f0" opacity="0.7" rx="2" transform="rotate(120)" />
+      <rect x="-2" y="-70" width="4" height="70" fill="#e8f1f0" opacity="0.7" rx="2" transform="rotate(240)" />
+      <circle r="6" fill="#2a3d34" />
+    </g>
+  </g>
+
+  <!-- Wind Turbine 2 (Middle distance) -->
+  <g opacity="0.75">
+    <!-- Tower -->
+    <path d="M380 480 L396 850" stroke="#314d3f" stroke-width="14" fill="none" stroke-linecap="round" />
+
+    <!-- Nacelle -->
+    <ellipse cx="388" cy="480" rx="18" ry="12" fill="#314d3f" />
+
+    <!-- Blades -->
+    <g transform="translate(388, 480) rotate(60)">
+      <rect x="-3" y="-100" width="6" height="100" fill="#d4e5e0" opacity="0.85" rx="3" />
+      <rect x="-3" y="-100" width="6" height="100" fill="#d4e5e0" opacity="0.85" rx="3" transform="rotate(120)" />
+      <rect x="-3" y="-100" width="6" height="100" fill="#d4e5e0" opacity="0.85" rx="3" transform="rotate(240)" />
+      <circle r="10" fill="#314d3f" />
+    </g>
+  </g>
+
+  <!-- Wind Turbine 3 (Foreground - Largest, main focus) -->
+  <g>
+    <!-- Tower -->
+    <path d="M180 380 L220 900" stroke="#3d5a49" stroke-width="20" fill="none" stroke-linecap="round" />
+    <path d="M185 400 L215 880" stroke="#4a6857" stroke-width="6" fill="none" opacity="0.5" />
+
+    <!-- Nacelle -->
+    <ellipse cx="200" cy="380" rx="28" ry="18" fill="#3d5a49" />
+    <rect x="188" y="371" width="24" height="18" fill="#4a6857" />
+
+    <!-- Blades (different rotation) -->
+    <g transform="translate(200, 380) rotate(30)">
+      <!-- Blade 1 -->
+      <path d="M-4 0 L-6 -140 L0 -155 L6 -140 L4 0 Z" fill="#ecf5f2" opacity="0.95" />
+      <!-- Blade 2 -->
+      <path d="M-4 0 L-6 -140 L0 -155 L6 -140 L4 0 Z" fill="#ecf5f2" opacity="0.95" transform="rotate(120)" />
+      <!-- Blade 3 -->
+      <path d="M-4 0 L-6 -140 L0 -155 L6 -140 L4 0 Z" fill="#d8ebe5" opacity="0.95" transform="rotate(240)" />
+
+      <!-- Hub -->
+      <circle r="14" fill="#3d5a49" />
+      <circle r="10" fill="#2c4037" />
+    </g>
+  </g>
+
+  <!-- Distant turbines (tiny silhouettes on horizon) -->
+  <g opacity="0.35">
+    <line x1="280" y1="680" x2="286" y2="730" stroke="#1a2d24" stroke-width="3" />
+    <circle cx="283" cy="680" r="2" fill="#1a2d24" />
+    <line x1="282" y1="678" x2="282" y2="655" stroke="#d0d8d5" stroke-width="1.5" />
+
+    <line x1="330" y1="690" x2="335" y2="735" stroke="#1a2d24" stroke-width="3" />
+    <circle cx="332" cy="690" r="2" fill="#1a2d24" />
+    <line x1="331" y1="688" x2="331" y2="668" stroke="#d0d8d5" stroke-width="1.5" />
+  </g>
+
+  <!-- Birds flying -->
+  <g stroke="#1a2d24" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M120 240 Q123 236 126 240" />
+    <path d="M140 245 Q143 241 146 245" />
+    <path d="M450 180 Q453 176 456 180" />
+  </g>
+
+  <!-- Light rays from sun -->
+  <g stroke="#fdc830" stroke-width="2" opacity="0.15">
+    <line x1="480" y1="280" x2="560" y2="210" />
+    <line x1="480" y1="280" x2="580" y2="280" />
+    <line x1="480" y1="280" x2="560" y2="350" />
+    <line x1="480" y1="280" x2="420" y2="210" />
+  </g>
+
+  <!-- Energy efficiency badge -->
+  <g transform="translate(80, 600)" opacity="0.7">
+    <circle r="45" fill="#10b981" opacity="0.2" />
+    <circle r="34" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M-8 -5 L-8 5 L4 0 Z" fill="#10b981" transform="rotate(-90)" />
+    <text x="0" y="20" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#10b981" font-weight="bold">CLEAN</text>
+  </g>
+</svg>

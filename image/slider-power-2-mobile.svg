@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1000" role="img" aria-label="Smart meter and digital grid infrastructure">
+  <defs>
+    <linearGradient id="bg2-mobile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2332" />
+      <stop offset="100%" stop-color="#2d3f5f" />
+    </linearGradient>
+    <linearGradient id="screen-mobile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a4d5c" />
+      <stop offset="100%" stop-color="#0d2630" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="1000" fill="url(#bg2-mobile)" />
+
+  <!-- Abstract cityscape -->
+  <g fill="#1f2d42" opacity="0.6">
+    <rect x="30" y="700" width="80" height="300" />
+    <rect x="130" y="650" width="110" height="350" />
+    <rect x="260" y="720" width="70" height="280" />
+    <rect x="350" y="680" width="95" height="320" />
+    <rect x="465" y="710" width="85" height="290" />
+  </g>
+
+  <!-- Circuit board pattern background -->
+  <g stroke="#3498db" stroke-width="2" fill="none" opacity="0.3">
+    <path d="M30 120 L150 120 L150 200 L270 200" />
+    <path d="M50 280 L180 280 L180 180 L300 180" />
+    <path d="M80 420 L200 420 L200 320 L320 320" />
+    <circle cx="150" cy="120" r="6" fill="#3498db" />
+    <circle cx="180" cy="280" r="6" fill="#3498db" />
+    <circle cx="200" cy="420" r="6" fill="#3498db" />
+  </g>
+
+  <!-- Smart Meter Device (larger for mobile) -->
+  <g>
+    <!-- Meter body -->
+    <rect x="110" y="180" width="380" height="480" rx="8" fill="#2c3e50" stroke="#34495e" stroke-width="4" />
+    <rect x="130" y="200" width="340" height="440" rx="6" fill="#1a252f" />
+
+    <!-- Screen -->
+    <rect x="160" y="240" width="280" height="180" rx="4" fill="url(#screen-mobile)" stroke="#0ea5e9" stroke-width="2" />
+
+    <!-- Display elements -->
+    <g fill="#0ea5e9" font-family="monospace" font-size="32" font-weight="bold">
+      <text x="180" y="300">5,247 kWh</text>
+    </g>
+    <g fill="#22d3ee" font-family="monospace" font-size="18">
+      <text x="180" y="340">Real-time Usage</text>
+      <text x="180" y="370">Peak: 3.2 kW</text>
+      <text x="180" y="400">Status: Active</text>
+    </g>
+
+    <!-- LED indicators -->
+    <circle cx="180" cy="460" r="10" fill="#10b981" opacity="0.9" />
+    <circle cx="220" cy="460" r="10" fill="#10b981" opacity="0.9" />
+    <circle cx="260" cy="460" r="10" fill="#3b82f6" opacity="0.9" />
+    <circle cx="300" cy="460" r="10" fill="#3b82f6" opacity="0.9" />
+
+    <!-- Buttons/Interface -->
+    <rect x="170" y="510" width="60" height="40" rx="4" fill="#374151" stroke="#4b5563" stroke-width="2" />
+    <rect x="250" y="510" width="60" height="40" rx="4" fill="#374151" stroke="#4b5563" stroke-width="2" />
+    <rect x="330" y="510" width="60" height="40" rx="4" fill="#374151" stroke="#4b5563" stroke-width="2" />
+
+    <!-- Connection ports -->
+    <rect x="150" y="595" width="30" height="30" rx="3" fill="#1f2937" stroke="#6b7280" stroke-width="2" />
+    <rect x="200" y="595" width="30" height="30" rx="3" fill="#1f2937" stroke="#6b7280" stroke-width="2" />
+  </g>
+
+  <!-- Network connections radiating from meter -->
+  <g stroke="#22d3ee" stroke-width="3" fill="none" opacity="0.7">
+    <path d="M490 340 L570 250" stroke-dasharray="6,4" />
+    <path d="M490 380 L580 380" stroke-dasharray="6,4" />
+    <path d="M490 420 L570 510" stroke-dasharray="6,4" />
+    <path d="M110 340 L30 250" stroke-dasharray="6,4" />
+    <path d="M110 380 L20 380" stroke-dasharray="6,4" />
+    <path d="M110 420 L30 510" stroke-dasharray="6,4" />
+  </g>
+
+  <!-- Network nodes -->
+  <g fill="#22d3ee" opacity="0.8">
+    <circle cx="570" cy="250" r="10" />
+    <circle cx="580" cy="380" r="10" />
+    <circle cx="570" cy="510" r="10" />
+    <circle cx="30" cy="250" r="10" />
+    <circle cx="20" cy="380" r="10" />
+    <circle cx="30" cy="510" r="10" />
+  </g>
+
+  <!-- Additional circuit patterns -->
+  <g stroke="#3498db" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M450 100 L550 100 L550 180" />
+    <path d="M50 550 L120 550 L120 630" />
+    <circle cx="550" cy="100" r="5" fill="#3498db" />
+    <circle cx="120" cy="550" r="5" fill="#3498db" />
+  </g>
+
+  <!-- Data flow particles -->
+  <g fill="#10b981" opacity="0.7">
+    <circle cx="530" cy="320" r="5" />
+    <circle cx="550" cy="390" r="5" />
+    <circle cx="80" cy="360" r="5" />
+    <circle cx="60" cy="430" r="5" />
+  </g>
+
+  <!-- Power efficiency icon/badge -->
+  <g transform="translate(300, 780)">
+    <circle r="50" fill="#10b981" opacity="0.15" />
+    <circle r="35" fill="none" stroke="#10b981" stroke-width="3" />
+    <path d="M-8 -15 L8 0 L-8 15 Z" fill="#10b981" transform="rotate(90)" />
+  </g>
+</svg>
