@@ -969,11 +969,46 @@ h1::after{
     }
 
     /* Testimonial spacing */
+    #testimonials{
+        padding: 40px 20px !important;
+    }
+    #testimonials h1{
+        margin-bottom: 30px;
+    }
     #testimonials .col-md-6{
         margin-bottom: 30px;
+        padding: 0 15px;
     }
     #testimonials .col-md-6:last-child{
         margin-bottom: 0;
+    }
+    #testimonials .testimonial{
+        padding: 25px 20px;
+    }
+
+    /* Footer improvements */
+    #footer{
+        padding: 40px 20px 20px 20px !important;
+    }
+    #footer .col-md-4,
+    #footer .col-md-3{
+        margin-bottom: 30px;
+    }
+    #footer .col-md-4:last-child,
+    #footer .col-md-3:last-child{
+        margin-bottom: 0;
+    }
+    #footer h5{
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    #footer ul li{
+        margin-bottom: 12px;
+    }
+    .footer-bottom{
+        margin-top: 25px;
+        padding-top: 15px;
+        text-align: center;
     }
 
     /* Contact form improvements */
@@ -1050,5 +1085,43 @@ h1::after{
     #price .col-md-4,
     #testimonials .col-md-6{
         margin-bottom: 25px;
+    }
+
+    /* Testimonial extra small */
+    #testimonials{
+        padding: 30px 15px !important;
+    }
+    #testimonials h1{
+        margin-bottom: 25px;
+    }
+    #testimonials .testimonial{
+        padding: 20px 15px;
+    }
+
+    /* Footer extra small */
+    #footer{
+        padding: 30px 15px 15px 15px !important;
+    }
+    #footer .col-md-4,
+    #footer .col-md-3{
+        margin-bottom: 25px;
+    }
+    #footer h5{
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    #footer ul li{
+        margin-bottom: 10px;
+    }
+    .social-icons a{
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        margin-right: 8px;
+        font-size: 16px;
+    }
+    .footer-bottom{
+        margin-top: 20px;
+        padding-top: 15px;
     }
 }
