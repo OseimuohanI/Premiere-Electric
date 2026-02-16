@@ -33,8 +33,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy.WithOrigins(
-            "https://charming-paprenjak-ca099d.netlify.app/",
-            "http://localhost"
+            "https://charming-paprenjak-ca099d.netlify.app",
+            "http://localhost",
+            "http://localhost:5500",
+            "http://localhost:5000",
+            "http://127.0.0.1:5500"
         )
         .AllowAnyMethod()
         .AllowAnyHeader();
@@ -61,6 +64,7 @@ app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
+app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
 
 // Automatic migrations are disabled by default. To re-enable, set ENABLE_MIGRATIONS=true.
 if (string.Equals(Environment.GetEnvironmentVariable("ENABLE_MIGRATIONS"), "true", StringComparison.OrdinalIgnoreCase))
