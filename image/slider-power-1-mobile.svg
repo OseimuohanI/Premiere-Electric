@@ -8,7 +8,7 @@
   <rect width="600" height="1000" fill="url(#bg1-mobile)" />
 
   <!-- City skyline with buildings -->
-  <g fill="#1a1f24" opacity="0.7">
+  <g class="svg-buildings" fill="#1a1f24" opacity="0.7">
     <!-- Tall building 1 -->
     <rect x="30" y="500" width="70" height="150" />
     <!-- Windows -->
@@ -71,76 +71,76 @@
   </g>
 
   <!-- Rolling hills -->
-  <path d="M0 680 L200 630 L400 660 L600 640 L600 1000 L0 1000 Z" fill="#2c3239" />
-  <path d="M0 720 L180 670 L380 700 L600 680 L600 1000 L0 1000 Z" fill="#353c45" opacity="0.9" />
+  <path class="svg-terrain" d="M0 680 L200 630 L400 660 L600 640 L600 1000 L0 1000 Z" fill="#2c3239" />
+  <path class="svg-terrain" d="M0 720 L180 670 L380 700 L600 680 L600 1000 L0 1000 Z" fill="#353c45" opacity="0.9" />
 
-  <!-- Transmission Tower with Lattice Structure -->
-  <g stroke="#c5cdd6" stroke-width="10" stroke-linecap="round" fill="none">
-    <!-- Main legs (wider base) -->
-    <path d="M220 900 L290 350 L350 350 L420 900" />
+  <!-- Transmission Tower with Lattice Structure (shorter and more proportional) -->
+  <g class="svg-tower-main" stroke="#c5cdd6" stroke-width="10" stroke-linecap="round" fill="none">
+    <!-- Main legs (wider base, shorter height) -->
+    <path d="M220 900 L280 480 L360 480 L420 900" />
 
     <!-- Cross-arms (wider at bottom, narrower at top) -->
-    <path d="M245 780 L395 780" />
-    <path d="M265 650 L375 650" />
-    <path d="M280 520 L360 520" />
-    <path d="M295 420 L345 420" />
+    <path d="M238 820 L402 820" />
+    <path d="M252 720 L388 720" />
+    <path d="M268 620 L372 620" />
+    <path d="M284 540 L356 540" />
 
     <!-- Top peak -->
-    <path d="M290 350 L350 350" />
-    <line x1="320" y1="350" x2="320" y2="310" />
+    <path d="M280 480 L360 480" />
+    <line x1="320" y1="480" x2="320" y2="440" />
   </g>
 
   <!-- Lattice cross-bracing (thinner) -->
-  <g stroke="#a8b2bd" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9">
+  <g class="svg-tower-lattice" stroke="#a8b2bd" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9">
     <!-- Diagonal bracing -->
-    <path d="M245 780 L280 650 M280 650 L265 520" />
-    <path d="M395 780 L360 650 M360 650 L375 520" />
-    <path d="M265 650 L295 520 M295 520 L280 420" />
-    <path d="M375 650 L345 520 M345 520 L360 420" />
+    <path d="M238 820 L268 720 M268 720 L252 620" />
+    <path d="M402 820 L372 720 M372 720 L388 620" />
+    <path d="M252 720 L284 620 M284 620 L268 540" />
+    <path d="M388 720 L356 620 M356 620 L372 540" />
 
     <!-- Horizontal supports -->
-    <path d="M290 485 L350 485" />
-    <path d="M283 590 L357 590" />
-    <path d="M270 715 L370 715" />
+    <path d="M280 580 L360 580" />
+    <path d="M274 670 L366 670" />
+    <path d="M260 770 L380 770" />
   </g>
 
   <!-- Insulators on cross-arms -->
-  <g fill="#485460">
-    <circle cx="245" cy="780" r="9" />
-    <circle cx="395" cy="780" r="9" />
-    <circle cx="265" cy="650" r="8" />
-    <circle cx="375" cy="650" r="8" />
-    <circle cx="280" cy="520" r="8" />
-    <circle cx="360" cy="520" r="8" />
+  <g class="svg-insulators" fill="#485460">
+    <circle cx="238" cy="820" r="9" />
+    <circle cx="402" cy="820" r="9" />
+    <circle cx="252" cy="720" r="8" />
+    <circle cx="388" cy="720" r="8" />
+    <circle cx="268" cy="620" r="8" />
+    <circle cx="372" cy="620" r="8" />
   </g>
 
   <!-- Power lines connecting to tower -->
-  <g stroke="#485460" stroke-width="4" fill="none" opacity="0.8">
+  <g class="svg-powerlines" stroke="#485460" stroke-width="4" fill="none" opacity="0.8">
     <!-- Lines from left side -->
-    <path d="M0 785 L245 780" />
-    <path d="M0 655 L265 650" />
-    <path d="M0 525 L280 520" />
+    <path d="M0 825 L238 820" />
+    <path d="M0 725 L252 720" />
+    <path d="M0 625 L268 620" />
 
     <!-- Lines to right side -->
-    <path d="M395 780 L600 775" />
-    <path d="M375 650 L600 645" />
-    <path d="M360 520 L600 515" />
+    <path d="M402 820 L600 815" />
+    <path d="M388 720 L600 715" />
+    <path d="M372 620 L600 615" />
   </g>
 
   <!-- Power line sag/curve detail -->
   <g stroke="#485460" stroke-width="3" fill="none" opacity="0.6">
-    <path d="M0 787 Q120 795 245 782" />
-    <path d="M0 657 Q130 665 265 652" />
-    <path d="M0 527 Q140 535 280 522" />
-    <path d="M395 782 Q500 788 600 777" />
-    <path d="M375 652 Q490 656 600 647" />
-    <path d="M360 522 Q480 525 600 517" />
+    <path d="M0 827 Q120 835 238 822" />
+    <path d="M0 727 Q130 735 252 722" />
+    <path d="M0 627 Q140 635 268 622" />
+    <path d="M402 822 Q500 828 600 817" />
+    <path d="M388 722 Q490 726 600 717" />
+    <path d="M372 622 Q480 625 600 617" />
   </g>
 
   <!-- Additional decorative elements -->
-  <g stroke="#ffb020" stroke-width="3" fill="none" opacity="0.85">
+  <g class="svg-sun-glow" stroke="#ffb020" stroke-width="3" fill="none" opacity="0.85">
     <path d="M0 200 C150 160 300 160 450 200" />
     <path d="M450 200 C525 230 600 230 600 200" />
   </g>
-  <circle cx="150" cy="180" r="60" fill="#ffb020" opacity="0.12" />
+  <circle class="svg-sun-glow" cx="150" cy="180" r="60" fill="#ffb020" opacity="0.12" />
 </svg>

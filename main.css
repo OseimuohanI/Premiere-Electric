@@ -49,16 +49,19 @@
     transform: translateY(24px);
     transition: opacity 0.6s ease, transform 0.6s ease;
     transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
 }
 [data-reveal].is-visible{
     opacity: 1;
     transform: translateY(0);
+    will-change: auto;
 }
 @media (prefers-reduced-motion: reduce){
     [data-reveal]{
         opacity: 1;
         transform: none;
         transition: none;
+        will-change: auto;
     }
 }
 /*----------Carousel Captions----------*/
@@ -78,6 +81,10 @@
     letter-spacing: 0.5px;
     animation: slideInFromTop 1.7s ease forwards;
     opacity: 0;
+    will-change: opacity, transform;
+}
+.carousel-caption h5.is-animated{
+    will-change: auto;
 }
 .carousel-caption h5 .accent{
     color: #007bff;
@@ -190,7 +197,8 @@
 }
 .services .col-md-3{
     border-radius: 12px;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
 }
 .services .col-md-3:hover{
     background: #007bff;
@@ -870,25 +878,27 @@ h1::after{
         transform: translateY(0);
     }
 }
-/*----------Cursor Trail Effect----------*/
+/*----------Cursor Trail Effect (Optimized)----------*/
 .cursor-trail{
     position: fixed;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: radial-gradient(circle, #007bff 0%, rgba(0,123,255,0.4) 50%, transparent 100%);
+    background: #007bff;
+    opacity: 0.7;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    animation: cursorFade 0.8s ease-out forwards;
+    animation: cursorFade 0.6s ease-out forwards;
+    will-change: opacity, transform;
 }
 @keyframes cursorFade{
     0%{
-        opacity: 0.8;
+        opacity: 0.7;
         transform: translate(-50%, -50%) scale(1);
     }
     100%{
         opacity: 0;
-        transform: translate(-50%, -50%) scale(0.3);
+        transform: translate(-50%, -50%) scale(0.2);
     }
 }

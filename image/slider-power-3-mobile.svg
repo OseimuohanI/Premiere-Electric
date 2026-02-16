@@ -1,29 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1000" role="img" aria-label="Wind turbine farm at sunset generating renewable energy">
   <defs>
     <linearGradient id="sky-mobile" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1a2332" />
-      <stop offset="30%" stop-color="#3d5a80" />
-      <stop offset="60%" stop-color="#ee6c4d" />
-      <stop offset="80%" stop-color="#f7931e" />
-      <stop offset="100%" stop-color="#fdc830" />
-    </linearGradient>
-    <linearGradient id="sun-glow-mobile" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ff6b35" />
-      <stop offset="50%" stop-color="#f7931e" />
-      <stop offset="100%" stop-color="#fdc830" />
+      <stop offset="0%" stop-color="#1f2d3f" />
+      <stop offset="30%" stop-color="#2a3a4f" />
+      <stop offset="60%" stop-color="#35475c" />
+      <stop offset="100%" stop-color="#3a5567" />
     </linearGradient>
   </defs>
 
-  <!-- Sky gradient with sunset -->
+  <!-- Sky gradient -->
   <rect width="600" height="1000" fill="url(#sky-mobile)" />
 
-  <!-- Sun glow -->
-  <ellipse cx="480" cy="280" rx="150" ry="120" fill="url(#sun-glow-mobile)" opacity="0.2" />
-  <circle cx="480" cy="280" r="70" fill="#fdc830" opacity="0.4" />
-  <circle cx="480" cy="280" r="50" fill="#f7931e" opacity="0.6" />
-
   <!-- Clouds -->
-  <g fill="#2d4059" opacity="0.3">
+  <g fill="#2a3a4f" opacity="0.4">
     <ellipse cx="150" cy="100" rx="60" ry="25" />
     <ellipse cx="120" cy="90" rx="50" ry="22" />
     <ellipse cx="400" cy="120" rx="70" ry="28" />
@@ -31,8 +20,8 @@
   </g>
 
   <!-- Rolling hills (layered) -->
-  <path d="M0 700 Q150 650 300 680 T600 670 L600 1000 L0 1000 Z" fill="#1f3a2f" opacity="0.6" />
-  <path d="M0 760 Q130 700 260 740 T600 730 L600 1000 L0 1000 Z" fill="#213b30" opacity="0.8" />
+  <path d="M0 700 Q150 650 300 680 T600 670 L600 1000 L0 1000 Z" fill="#1f3a2f" opacity="0.8" />
+  <path d="M0 760 Q130 700 260 740 T600 730 L600 1000 L0 1000 Z" fill="#213b30" opacity="0.9" />
   <path d="M0 840 Q110 790 220 820 T600 810 L600 1000 L0 1000 Z" fill="#243d32" />
 
   <!-- Wind Turbine 1 (Background - Smallest) -->

@@ -485,17 +485,12 @@
     <!-- Bootstrap 5.3.0 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Reveal Animations -->
+    <!-- Reveal Animations (Optimized) -->
     <script>
-      const revealElements = document.querySelectorAll('[data-reveal]');
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      const revealNow = () => {
-        revealElements.forEach((element) => element.classList.add('is-visible'));
-      };
-
       if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-        revealNow();
+        document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
       } else {
         const observer = new IntersectionObserver(
           (entries) => {
@@ -506,14 +501,12 @@
               }
             });
           },
-          { threshold: 0.2, rootMargin: '0px 0px -10% 0px' }
+          { threshold: 0.15, rootMargin: '50px 0px 0px 0px' }
         );
 
-        revealElements.forEach((element) => {
+        document.querySelectorAll('[data-reveal]').forEach((element) => {
           const delay = element.getAttribute('data-reveal-delay');
-          if (delay) {
-            element.style.setProperty('--reveal-delay', `${delay}ms`);
-          }
+          if (delay) element.style.setProperty('--reveal-delay', `${delay}ms`);
           observer.observe(element);
         });
       }
@@ -697,20 +690,21 @@
       });
     </script>
 
-    <!-- Cursor Trail Effect -->
+    <!-- Cursor Trail Effect (Optimized) -->
     <script>
       const cursorTrail = [];
-      const maxTrailLength = 15;
+      const maxTrailLength = 12;
       let lastX = 0;
       let lastY = 0;
+      let trailTimeout;
 
-      document.addEventListener('mousemove', (e) => {
+      // Throttle mousemove to improve performance
+      const throttledMouseMove = (e) => {
         const dx = e.clientX - lastX;
         const dy = e.clientY - lastY;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        // Only create trail if mouse moved enough (prevents overcrowding)
-        if (distance > 10) {
+        if (distance > 15) {
           const trail = document.createElement('div');
           trail.className = 'cursor-trail';
           trail.style.left = e.clientX + 'px';
@@ -719,25 +713,33 @@
           document.body.appendChild(trail);
           cursorTrail.push(trail);
 
-          // Remove old trail elements
           if (cursorTrail.length > maxTrailLength) {
             const oldTrail = cursorTrail.shift();
             oldTrail.remove();
           }
 
-          // Animate and remove after animation
           setTimeout(() => {
             trail.remove();
             const index = cursorTrail.indexOf(trail);
-            if (index > -1) {
-              cursorTrail.splice(index, 1);
-            }
-          }, 800);
+            if (index > -1) cursorTrail.splice(index, 1);
+          }, 600);
 
           lastX = e.clientX;
           lastY = e.clientY;
         }
-      });
+      };
+
+      // Add throttle using requestAnimationFrame
+      let isThrottled = false;
+      document.addEventListener('mousemove', (e) => {
+        if (!isThrottled) {
+          isThrottled = true;
+          requestAnimationFrame(() => {
+            throttledMouseMove(e);
+            isThrottled = false;
+          });
+        }
+      }, { passive: true });
     </script>
 </body>
 </html>

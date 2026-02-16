@@ -1,29 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-label="Wind turbine farm at sunset generating renewable energy">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-label="Wind turbine farm generating renewable energy">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1a2332" />
-      <stop offset="30%" stop-color="#3d5a80" />
-      <stop offset="60%" stop-color="#ee6c4d" />
-      <stop offset="80%" stop-color="#f7931e" />
-      <stop offset="100%" stop-color="#fdc830" />
-    </linearGradient>
-    <linearGradient id="sun-glow" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ff6b35" />
-      <stop offset="50%" stop-color="#f7931e" />
-      <stop offset="100%" stop-color="#fdc830" />
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f2d3f" />
+      <stop offset="30%" stop-color="#2a3a4f" />
+      <stop offset="60%" stop-color="#35475c" />
+      <stop offset="100%" stop-color="#3a5567" />
     </linearGradient>
   </defs>
 
-  <!-- Sky gradient with sunset -->
-  <rect width="1600" height="800" fill="url(#sky)" />
-
-  <!-- Sun glow -->
-  <ellipse class="svg-sun-glow" cx="1350" cy="380" rx="220" ry="180" fill="url(#sun-glow)" opacity="0.2" />
-  <circle class="svg-sun-glow" cx="1350" cy="380" r="100" fill="#fdc830" opacity="0.4" />
-  <circle class="svg-sun-glow" cx="1350" cy="380" r="70" fill="#f7931e" opacity="0.6" />
+  <!-- Sky gradient -->
+  <rect width="1600" height="800" fill="url(#sky3)" />
 
   <!-- Clouds -->
-  <g class="svg-clouds" fill="#2d4059" opacity="0.3">
+  <g class="svg-clouds" fill="#2a3a4f" opacity="0.4">
     <ellipse cx="300" cy="150" rx="90" ry="35" />
     <ellipse cx="250" cy="140" rx="70" ry="30" />
     <ellipse cx="900" cy="120" rx="110" ry="40" />
@@ -31,117 +20,140 @@
   </g>
 
   <!-- Rolling hills (layered) -->
-  <path class="svg-terrain" d="M0 580 Q400 480 800 550 T1600 520 L1600 800 L0 800 Z" fill="#1f3a2f" opacity="0.6" />
-  <path class="svg-terrain" d="M0 620 Q350 530 700 600 T1600 580 L1600 800 L0 800 Z" fill="#213b30" opacity="0.8" />
-  <path class="svg-terrain" d="M0 680 Q300 620 600 660 T1600 650 L1600 800 L0 800 Z" fill="#243d32" />
+  <path class="svg-terrain" d="M0 580 Q400 480 800 550 T1600 520 L1600 800 L0 800 Z" fill="#2c3239" opacity="0.6" />
+  <path class="svg-terrain" d="M0 620 Q350 530 700 600 T1600 580 L1600 800 L0 800 Z" fill="#2f3a45" opacity="0.8" />
+  <path class="svg-terrain" d="M0 680 Q300 620 600 660 T1600 650 L1600 800 L0 800 Z" fill="#35404a" />
 
   <!-- Wind Turbine 1 (Background - Smallest) -->
   <g class="svg-turbine-1" opacity="0.5">
-    <!-- Tower -->
-    <path d="M1450 450 L1480 680" stroke="#2a3d34" stroke-width="12" fill="none" stroke-linecap="round" />
+    <!-- Tower - tapered column -->
+    <path d="M1458 680 L1463 320 L1467 320 L1472 680" stroke="#8a95a0" stroke-width="8" fill="none" stroke-linecap="round" />
+
+    <!-- Simple cross-bracing -->
+    <g stroke="#7a858f" stroke-width="4" opacity="0.6">
+      <path d="M1459 600 L1471 600" />
+      <path d="M1460 500 L1470 500" />
+      <path d="M1461 400 L1469 400" />
+    </g>
 
     <!-- Nacelle -->
-    <ellipse cx="1465" cy="450" rx="18" ry="12" fill="#2a3d34" />
+    <rect x="1458" y="312" width="14" height="16" fill="#8a95a0" rx="2" />
 
-    <!-- Blades (rotated position) -->
-    <g transform="translate(1465, 450)">
-      <rect x="-3" y="-90" width="6" height="90" fill="#e8f1f0" opacity="0.7" rx="3" />
-      <rect x="-3" y="-90" width="6" height="90" fill="#e8f1f0" opacity="0.7" rx="3" transform="rotate(120)" />
-      <rect x="-3" y="-90" width="6" height="90" fill="#e8f1f0" opacity="0.7" rx="3" transform="rotate(240)" />
-      <circle r="8" fill="#2a3d34" />
+    <!-- Blades -->
+    <g transform="translate(1465, 320) rotate(45)">
+      <path d="M-3 0 L-4 -85 L0 -90 L4 -85 L3 0 Z" fill="#c5cdd6" opacity="0.8" />
+      <path d="M-3 0 L-4 -85 L0 -90 L4 -85 L3 0 Z" fill="#c5cdd6" opacity="0.8" transform="rotate(120)" />
+      <path d="M-3 0 L-4 -85 L0 -90 L4 -85 L3 0 Z" fill="#b8c2cc" opacity="0.7" transform="rotate(240)" />
+      <circle r="6" fill="#7a858f" />
     </g>
   </g>
 
   <!-- Wind Turbine 2 (Middle distance) -->
   <g class="svg-turbine-2" opacity="0.7">
-    <!-- Tower -->
-    <path d="M850 380 L900 680" stroke="#314d3f" stroke-width="18" fill="none" stroke-linecap="round" />
+    <!-- Tower - tapered -->
+    <path d="M865 680 L872 250 L878 250 L885 680" stroke="#9ca6b0" stroke-width="12" fill="none" stroke-linecap="round" />
+
+    <!-- Cross bracing -->
+    <g stroke="#8a95a0" stroke-width="6" opacity="0.7">
+      <path d="M867 600 L883 600" />
+      <path d="M868 500 L882 500" />
+      <path d="M870 400 L880 400" />
+      <path d="M871 300 L879 300" />
+      <!-- Diagonal supports -->
+      <path d="M867 600 L872 500 M872 500 L867 400" />
+      <path d="M883 600 L878 500 M878 500 L883 400" />
+    </g>
 
     <!-- Nacelle -->
-    <ellipse cx="875" cy="380" rx="24" ry="15" fill="#314d3f" />
+    <rect x="867" y="240" width="16" height="20" fill="#9ca6b0" rx="2" />
 
     <!-- Blades -->
-    <g transform="translate(875, 380)">
-      <rect x="-4" y="-130" width="8" height="130" fill="#d4e5e0" opacity="0.8" rx="4" />
-      <rect x="-4" y="-130" width="8" height="130" fill="#d4e5e0" opacity="0.8" rx="4" transform="rotate(120)" />
-      <rect x="-4" y="-130" width="8" height="130" fill="#d4e5e0" opacity="0.8" rx="4" transform="rotate(240)" />
-      <circle r="12" fill="#314d3f" />
+    <g transform="translate(875, 250) rotate(-30)">
+      <path d="M-4 0 L-6 -125 L0 -130 L6 -125 L4 0 Z" fill="#c5cdd6" opacity="0.9" />
+      <path d="M-4 0 L-6 -125 L0 -130 L6 -125 L4 0 Z" fill="#c5cdd6" opacity="0.9" transform="rotate(120)" />
+      <path d="M-4 0 L-6 -125 L0 -130 L6 -125 L4 0 Z" fill="#b5bfc8" opacity="0.8" transform="rotate(240)" />
+      <circle r="10" fill="#8a95a0" />
     </g>
   </g>
 
   <!-- Wind Turbine 3 (Foreground - Largest, main focus) -->
   <g class="svg-turbine-3">
-    <!-- Tower -->
-    <path d="M350 280 L420 710" stroke="#3d5a49" stroke-width="26" fill="none" stroke-linecap="round" />
-    <path d="M360 300 L410 680" stroke="#4a6857" stroke-width="8" fill="none" opacity="0.5" />
+    <!-- Tower - sturdy tapered column with lattice -->
+    <g stroke="#adb8c2" stroke-width="16" stroke-linecap="round" fill="none">
+      <path d="M375 710 L385 150 L395 150 L405 710" />
+    </g>
+
+    <!-- Lattice cross-bracing -->
+    <g stroke="#9ca6b0" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.8">
+      <path d="M377 650 L403 650" />
+      <path d="M378 550 L402 550" />
+      <path d="M380 450 L400 450" />
+      <path d="M381 350 L399 350" />
+      <path d="M383 250 L397 250" />
+
+      <!-- Diagonal bracing -->
+      <path d="M377 650 L381 550 M381 550 L377 450" />
+      <path d="M403 650 L399 550 M399 550 L403 450" />
+      <path d="M378 550 L383 450 M383 450 L378 350" />
+      <path d="M402 550 L397 450 M397 450 L402 350" />
+    </g>
 
     <!-- Nacelle -->
-    <ellipse cx="385" cy="280" rx="35" ry="22" fill="#3d5a49" />
-    <rect x="370" y="268" width="30" height="24" fill="#4a6857" />
+    <rect x="378" y="138" width="24" height="24" fill="#adb8c2" rx="3" />
 
-    <!-- Blades (different rotation) -->
-    <g transform="translate(385, 280) rotate(45)">
-      <!-- Blade 1 -->
-      <path d="M-5 0 L-8 -180 L0 -200 L8 -180 L5 0 Z" fill="#ecf5f2" opacity="0.95" />
-      <!-- Blade 2 -->
-      <path d="M-5 0 L-8 -180 L0 -200 L8 -180 L5 0 Z" fill="#ecf5f2" opacity="0.95" transform="rotate(120)" />
-      <!-- Blade 3 -->
-      <path d="M-5 0 L-8 -180 L0 -200 L8 -180 L5 0 Z" fill="#d8ebe5" opacity="0.95" transform="rotate(240)" />
-
+    <!-- Blades -->
+    <g transform="translate(390, 150) rotate(60)">
+      <path d="M-6 0 L-10 -180 L0 -200 L10 -180 L6 0 Z" fill="#c5cdd6" opacity="0.95" />
+      <path d="M-6 0 L-10 -180 L0 -200 L10 -180 L6 0 Z" fill="#c5cdd6" opacity="0.95" transform="rotate(120)" />
+      <path d="M-6 0 L-10 -180 L0 -200 L10 -180 L6 0 Z" fill="#adb8c2" opacity="0.85" transform="rotate(240)" />
       <!-- Hub -->
-      <circle r="18" fill="#3d5a49" />
-      <circle r="12" fill="#2c4037" />
+      <circle r="18" fill="#adb8c2" />
+      <circle r="12" fill="#8a95a0" />
     </g>
   </g>
 
   <!-- Wind Turbine 4 (Right side, medium distance) -->
-  <g class="svg-turbine-4" opacity="0.8">
+  <g class="svg-turbine-4" opacity="0.75">
     <!-- Tower -->
-    <path d="M1100 350 L1150 680" stroke="#354d42" stroke-width="20" fill="none" stroke-linecap="round" />
+    <path d="M1098 680 L1105 300 L1113 300 L1120 680" stroke="#9ca6b0" stroke-width="14" fill="none" stroke-linecap="round" />
+
+    <!-- Cross bracing -->
+    <g stroke="#8a95a0" stroke-width="8" opacity="0.7">
+      <path d="M1100 600 L1118 600" />
+      <path d="M1101 500 L1117 500" />
+      <path d="M1103 400 L1115 400" />
+      <!-- Diagonal supports -->
+      <path d="M1100 600 L1105 500 M1105 500 L1100 400" />
+      <path d="M1118 600 L1113 500 M1113 500 L1118 400" />
+    </g>
 
     <!-- Nacelle -->
-    <ellipse cx="1125" cy="350" rx="28" ry="18" fill="#354d42" />
+    <rect x="1100" y="290" width="18" height="20" fill="#9ca6b0" rx="2" />
 
     <!-- Blades -->
-    <g transform="translate(1125, 350) rotate(-30)">
-      <rect x="-5" y="-150" width="10" height="150" fill="#deeee8" opacity="0.9" rx="5" />
-      <rect x="-5" y="-150" width="10" height="150" fill="#deeee8" opacity="0.9" rx="5" transform="rotate(120)" />
-      <rect x="-5" y="-150" width="10" height="150" fill="#deeee8" opacity="0.9" rx="5" transform="rotate(240)" />
-      <circle r="15" fill="#354d42" />
+    <g transform="translate(1109, 300) rotate(-45)">
+      <path d="M-5 0 L-7 -145 L0 -150 L7 -145 L5 0 Z" fill="#c5cdd6" opacity="0.9" />
+      <path d="M-5 0 L-7 -145 L0 -150 L7 -145 L5 0 Z" fill="#c5cdd6" opacity="0.9" transform="rotate(120)" />
+      <path d="M-5 0 L-7 -145 L0 -150 L7 -145 L5 0 Z" fill="#b5bfc8" opacity="0.8" transform="rotate(240)" />
+      <circle r="12" fill="#8a95a0" />
     </g>
   </g>
 
   <!-- Distant turbines (tiny silhouettes on horizon) -->
-  <g class="svg-distant-turbines" opacity="0.3">
-    <line x1="550" y1="540" x2="560" y2="600" stroke="#1a2d24" stroke-width="4" />
-    <circle cx="555" cy="540" r="3" fill="#1a2d24" />
-    <line x1="553" y1="538" x2="553" y2="500" stroke="#d0d8d5" stroke-width="2" />
+  <g class="svg-distant-turbines" opacity="0.4">
+    <line x1="553" y1="540" x2="557" y2="600" stroke="#6a7580" stroke-width="3" />
+    <circle cx="555" cy="540" r="4" fill="#6a7580" />
+    <line x1="555" y1="538" x2="555" y2="515" stroke="#9ca6b0" stroke-width="1.5" />
 
-    <line x1="680" y1="550" x2="688" y2="605" stroke="#1a2d24" stroke-width="4" />
-    <circle cx="684" cy="550" r="3" fill="#1a2d24" />
-    <line x1="682" y1="548" x2="682" y2="512" stroke="#d0d8d5" stroke-width="2" />
+    <line x1="683" y1="550" x2="687" y2="605" stroke="#6a7580" stroke-width="3" />
+    <circle cx="685" cy="550" r="4" fill="#6a7580" />
+    <line x1="685" y1="548" x2="685" y2="525" stroke="#9ca6b0" stroke-width="1.5" />
   </g>
 
   <!-- Birds flying -->
-  <g stroke="#1a2d24" stroke-width="2" fill="none" opacity="0.4">
+  <g stroke="#2a3a4f" stroke-width="2" fill="none" opacity="0.3">
     <path d="M250 280 Q255 275 260 280" />
     <path d="M270 285 Q275 280 280 285" />
     <path d="M1200 220 Q1205 215 1210 220" />
-  </g>
-
-  <!-- Light rays from sun -->
-  <g stroke="#fdc830" stroke-width="2" opacity="0.15">
-    <line x1="1350" y1="380" x2="1500" y2="280" />
-    <line x1="1350" y1="380" x2="1550" y2="380" />
-    <line x1="1350" y1="380" x2="1500" y2="480" />
-    <line x1="1350" y1="380" x2="1250" y2="280" />
-  </g>
-
-  <!-- Energy efficiency badge -->
-  <g transform="translate(120, 480)" opacity="0.7">
-    <circle r="55" fill="#10b981" opacity="0.2" />
-    <circle r="42" fill="none" stroke="#10b981" stroke-width="4" />
-    <path d="M-10 -5 L-10 5 L5 0 Z" fill="#10b981" transform="rotate(-90)" />
-    <text x="0" y="25" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#10b981" font-weight="bold">CLEAN</text>
   </g>
 </svg>
