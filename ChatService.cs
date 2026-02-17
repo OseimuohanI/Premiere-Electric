@@ -91,8 +91,8 @@ namespace PremierElectric.Api.Services
                 response.BotResponse = session.Messages.Count <= 2
                     ? "Hello! Welcome to Premiere Electric. I'm here to help you with any questions about our electrical services. What can I assist you with today?"
                     : "Hello again! How else can I help you?";
-                
-                response.SuggestedActions = GetServiceSuggestions();
+
+                response.SuggestedActions = GetContextualSuggestions(session);
                 return response;
             }
 
@@ -178,7 +178,13 @@ namespace PremierElectric.Api.Services
                     "• Tripped breakers\n" +
                     "• Any safety hazards\n\n" +
                     "Don't wait - call now for immediate help!";
-                
+
+                response.SuggestedActions = new List<QuickReplyOption>
+                {
+                    new() { Label = "Standard Services", Value = "What other services do you offer?" },
+                    new() { Label = "Contact Info", Value = "How can I contact you?" },
+                    new() { Label = "Business Hours", Value = "What are your business hours?" }
+                };
                 return response;
             }
 
@@ -221,8 +227,8 @@ namespace PremierElectric.Api.Services
                     "• Same-day service available\n" +
                     "• Emergency calls: 24/7\n\n" +
                     "What type of service do you need?";
-                
-                response.SuggestedActions = GetServiceSuggestions();
+
+                response.SuggestedActions = GetContextualSuggestions(session);
                 return response;
             }
 
@@ -230,7 +236,7 @@ namespace PremierElectric.Api.Services
             if (Regex.IsMatch(userMessage, @"\b(thank|thanks|appreciate)\b"))
             {
                 response.BotResponse = "You're very welcome! Is there anything else I can help you with today?";
-                response.SuggestedActions = GetServiceSuggestions();
+                response.SuggestedActions = GetContextualSuggestions(session);
                 return response;
             }
 
@@ -242,8 +248,8 @@ namespace PremierElectric.Api.Services
                 "• Scheduling appointments\n" +
                 "• Emergency services\n\n" +
                 "What would you like to know more about?";
-            
-            response.SuggestedActions = GetServiceSuggestions();
+
+            response.SuggestedActions = GetContextualSuggestions(session);
             return response;
         }
 
@@ -255,6 +261,51 @@ namespace PremierElectric.Api.Services
                 new() { Label = "Get Pricing", Value = "How much does it cost?" },
                 new() { Label = "Contact Us", Value = "How can I contact you?" }
             };
+        }
+
+        private List<QuickReplyOption> GetContextualSuggestions(ChatSession session)
+        {
+            // Track what topics have been discussed
+            var discussedTopics = new HashSet<string>();
+            foreach (var msg in session.Messages.Where(m => !m.IsFromUser))
+            {
+                var content = msg.Content.ToLowerInvariant();
+                if (content.Contains("residential") || content.Contains("home")) discussedTopics.Add("residential");
+                if (content.Contains("commercial") || content.Contains("business")) discussedTopics.Add("commercial");
+                if (content.Contains("pricing") || content.Contains("$")) discussedTopics.Add("pricing");
+                if (content.Contains("emergency") || content.Contains("24/7")) discussedTopics.Add("emergency");
+                if (content.Contains("contact") || content.Contains("phone")) discussedTopics.Add("contact");
+            }
+
+            var suggestions = new List<QuickReplyOption>();
+
+            // Suggest topics not yet discussed
+            if (!discussedTopics.Contains("residential"))
+                suggestions.Add(new() { Label = "Residential Services", Value = "Tell me about residential services" });
+
+            if (!discussedTopics.Contains("commercial"))
+                suggestions.Add(new() { Label = "Commercial Services", Value = "Tell me about commercial services" });
+
+            if (!discussedTopics.Contains("pricing"))
+                suggestions.Add(new() { Label = "Get Pricing", Value = "How much does it cost?" });
+
+            if (!discussedTopics.Contains("emergency"))
+                suggestions.Add(new() { Label = "Emergency Service", Value = "Do you offer emergency services?" });
+
+            if (!discussedTopics.Contains("contact"))
+                suggestions.Add(new() { Label = "Contact Info", Value = "How can I contact you?" });
+
+            // If we have enough suggestions, take the first 3
+            if (suggestions.Count >= 3)
+                return suggestions.Take(3).ToList();
+
+            // Otherwise add some general ones
+            if (suggestions.Count < 3)
+                suggestions.Add(new() { Label = "Schedule Visit", Value = "I'd like to schedule an appointment" });
+            if (suggestions.Count < 3)
+                suggestions.Add(new() { Label = "Request Quote", Value = "I need a quote" });
+
+            return suggestions.Take(3).ToList();
         }
 
         private List<QuickReplyOption> GetQuoteSuggestions()
