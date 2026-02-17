@@ -2,7 +2,7 @@
 
 Premiere Electric is a full-stack web app for an electrical contractor with a static frontend and an ASP.NET Core API.
 
-Live site: https://charming-paprenjak-ca099d.netlify.app/   or use https://oseimuohani.github.io/Premiere-Electric/
+Live site: https://charming-paprenjak-ca099d.netlify.app/   or    https://oseimuohani.github.io/Premiere-Electric/
 
 ## Stack / Tech Used
 
