@@ -34,6 +34,7 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
             "https://charming-paprenjak-ca099d.netlify.app",
+            "https://oseimuohani.github.io",
             "http://localhost",
             "http://localhost:5500",
             "http://localhost:5000",
