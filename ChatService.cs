@@ -148,14 +148,14 @@ namespace PremierElectric.Api.Services
             }
 
             // Pricing inquiry
-            if (Regex.IsMatch(userMessage, @"\b(price|cost|quote|estimate|how much|pricing|rate|fee)\b"))
+            if (Regex.IsMatch(userMessage, @"\b(price|cost|quote|estimate|how much|pricing|rate|fee|plan)\b"))
             {
                 response.BotResponse = "Our pricing varies based on the scope and complexity of the project. We offer:\n\n" +
                     "💰 Basic Plan: $99/month - Ideal for homeowners\n" +
                     "💎 Standard Plan: $199/month - Perfect for small businesses\n" +
                     "🌟 Premium Plan: $299/month - Comprehensive coverage\n\n" +
                     "For custom projects, we provide FREE estimates! Would you like to request a quote?";
-                
+
                 response.SuggestedActions = new List<QuickReplyOption>
                 {
                     new() { Label = "Request Quote", Value = "I need a quote" },
@@ -189,30 +189,55 @@ namespace PremierElectric.Api.Services
             }
 
             // Contact information
-            if (Regex.IsMatch(userMessage, @"\b(contact|reach|phone|email|address|location|hours|open)\b"))
+            if (Regex.IsMatch(userMessage, @"\b(contact|reach|phone|email|address|location|hours|open|form|fill)\b"))
             {
                 var contactInfo = "📞 Phone: (555) 123-4567\n" +
                     "📧 Email: info@premierelectric.com\n" +
                     "🕐 Hours: Monday-Friday, 8AM-6PM\n" +
                     "⚡ Emergency Service: 24/7\n\n";
 
-                if (Regex.IsMatch(userMessage, @"\b(hours|open|when)\b"))
+                if (Regex.IsMatch(userMessage, @"\b(form|fill)\b"))
+                {
+                    response.BotResponse = "Great! You can fill out our contact form on this page. " +
+                        "Just scroll down to the contact section and provide your details:\n\n" +
+                        "• Full Name\n" +
+                        "• Email Address\n" +
+                        "• Phone Number\n" +
+                        "• Service Type\n" +
+                        "• Your Message\n\n" +
+                        "We'll get back to you within 24 hours!";
+
+                    response.SuggestedActions = new List<QuickReplyOption>
+                    {
+                        new() { Label = "View Services", Value = "What services do you offer?" },
+                        new() { Label = "Get Pricing", Value = "How much does it cost?" },
+                        new() { Label = "Call Instead", Value = "What's your phone number?" }
+                    };
+                }
+                else if (Regex.IsMatch(userMessage, @"\b(hours|open|when)\b"))
                 {
                     response.BotResponse = "We're open Monday through Friday, 8AM to 6PM. " +
                         "However, we offer 24/7 emergency service for urgent electrical issues!\n\n" + contactInfo +
                         "Would you like to schedule an appointment?";
+
+                    response.SuggestedActions = new List<QuickReplyOption>
+                    {
+                        new() { Label = "Fill Contact Form", Value = "I want to fill the contact form" },
+                        new() { Label = "Emergency Service", Value = "I have an emergency" }
+                    };
                 }
                 else
                 {
                     response.BotResponse = "You can reach us at:\n\n" + contactInfo +
                         "Feel free to call, email, or fill out our contact form!";
+
+                    response.SuggestedActions = new List<QuickReplyOption>
+                    {
+                        new() { Label = "Fill Contact Form", Value = "I want to fill the contact form" },
+                        new() { Label = "Emergency Service", Value = "I have an emergency" }
+                    };
                 }
-                
-                response.SuggestedActions = new List<QuickReplyOption>
-                {
-                    new() { Label = "Fill Contact Form", Value = "I want to fill the contact form" },
-                    new() { Label = "Emergency Service", Value = "I have an emergency" }
-                };
+
                 return response;
             }
 
