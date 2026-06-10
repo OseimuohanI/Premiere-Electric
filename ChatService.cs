@@ -100,10 +100,10 @@ namespace PremierElectric.Api.Services
             if (Regex.IsMatch(userMessage, @"\b(service|what do you do|what do you offer|capabilities)\b"))
             {
                 response.BotResponse = "We offer comprehensive electrical services:\n\n" +
-                    "🏠 Residential Wiring - Complete home electrical installations\n" +
-                    "🏢 Commercial Electrical - Office and business solutions\n" +
-                    "🔧 Maintenance & Repairs - Regular upkeep and emergency fixes\n" +
-                    "⚡ Equipment Installation - Industrial and commercial equipment\n\n" +
+                    "Residential Wiring - Complete home electrical installations\n" +
+                    "Commercial Electrical - Office and business solutions\n" +
+                    "Maintenance & Repairs - Regular upkeep and emergency fixes\n" +
+                    "Equipment Installation - Industrial and commercial equipment\n\n" +
                     "Would you like more details about any specific service?";
                 
                 response.SuggestedActions = new List<QuickReplyOption>
@@ -151,9 +151,9 @@ namespace PremierElectric.Api.Services
             if (Regex.IsMatch(userMessage, @"\b(price|cost|quote|estimate|how much|pricing|rate|fee|plan)\b"))
             {
                 response.BotResponse = "Our pricing varies based on the scope and complexity of the project. We offer:\n\n" +
-                    "💰 Basic Plan: $99/month - Ideal for homeowners\n" +
-                    "💎 Standard Plan: $199/month - Perfect for small businesses\n" +
-                    "🌟 Premium Plan: $299/month - Comprehensive coverage\n\n" +
+                    "Basic Plan: $99/month - Ideal for homeowners\n" +
+                    "Standard Plan: $199/month - Perfect for small businesses\n" +
+                    "Premium Plan: $299/month - Comprehensive coverage\n\n" +
                     "For custom projects, we provide FREE estimates! Would you like to request a quote?";
 
                 response.SuggestedActions = new List<QuickReplyOption>
@@ -168,9 +168,9 @@ namespace PremierElectric.Api.Services
             // Emergency services
             if (Regex.IsMatch(userMessage, @"\b(emergency|urgent|immediate|asap|right now|help)\b"))
             {
-                response.BotResponse = "⚡ EMERGENCY SERVICE AVAILABLE 24/7 ⚡\n\n" +
+                response.BotResponse = "EMERGENCY SERVICE AVAILABLE 24/7\n\n" +
                     "For immediate emergency assistance, please call us directly at:\n" +
-                    "📞 (555) 123-4567\n\n" +
+                    "(555) 123-4567\n\n" +
                     "Our emergency team responds to:\n" +
                     "• Power outages\n" +
                     "• Electrical fires\n" +
@@ -191,10 +191,10 @@ namespace PremierElectric.Api.Services
             // Contact information
             if (Regex.IsMatch(userMessage, @"\b(contact|reach|phone|email|address|location|hours|open|form|fill)\b"))
             {
-                var contactInfo = "📞 Phone: (555) 123-4567\n" +
-                    "📧 Email: info@premierelectric.com\n" +
-                    "🕐 Hours: Monday-Friday, 8AM-6PM\n" +
-                    "⚡ Emergency Service: 24/7\n\n";
+                var contactInfo = "Phone: (555) 123-4567\n" +
+                    "Email: info@premierelectric.com\n" +
+                    "Hours: Monday-Friday, 8AM-6PM\n" +
+                    "Emergency Service: 24/7\n\n";
 
                 if (Regex.IsMatch(userMessage, @"\b(form|fill)\b"))
                 {

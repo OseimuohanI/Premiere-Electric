@@ -437,6 +437,7 @@
                   <li><a href="#services">Services</a></li>
                   <li><a href="#team">Our Team</a></li>
                   <li><a href="#contact">Contact Us</a></li>
+                  <li><a href="disclaimer.html">Disclaimer</a></li>
                 </ul>
               </div>
               <div class="col-md-4" data-reveal data-reveal-delay="200">
@@ -770,6 +771,64 @@
             </div>
           `;
         }
+      });
+    </script>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimer-modal" class="disclaimer-modal">
+      <div class="disclaimer-modal-content">
+        <div class="disclaimer-body">
+          <p><strong>Legal Disclaimer:</strong></p>
+          <p>This is a portfolio project for demonstration purposes only. Not affiliated with any real business. <a href="disclaimer.html" class="disclaimer-link"><strong>Learn more →</strong></a></p>
+        </div>
+        <div class="disclaimer-footer">
+          <button id="disclaimer-accept" class="btn btn-primary">Understood</button>
+        </div>
+        <button class="disclaimer-close" id="disclaimer-close" title="Close" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Disclaimer Modal Handler -->
+    <script>
+      const disclaimerModal = document.getElementById('disclaimer-modal');
+      const disclaimerClose = document.getElementById('disclaimer-close');
+      const disclaimerAccept = document.getElementById('disclaimer-accept');
+
+      function showDisclaimerModal() {
+        if (!localStorage.getItem('disclaimer-acknowledged')) {
+          disclaimerModal.classList.add('active');
+          adjustChatbotPosition();
+        }
+      }
+
+      function hideDisclaimerModal() {
+        disclaimerModal.classList.remove('active');
+        resetChatbotPosition();
+        localStorage.setItem('disclaimer-acknowledged', 'true');
+      }
+
+      function adjustChatbotPosition() {
+        const chatbot = document.getElementById('chatbot-toggle');
+        if (chatbot) {
+          chatbot.style.bottom = '95px';
+        }
+      }
+
+      function resetChatbotPosition() {
+        const chatbot = document.getElementById('chatbot-toggle');
+        if (chatbot) {
+          chatbot.style.bottom = '30px';
+        }
+      }
+
+      disclaimerClose.addEventListener('click', hideDisclaimerModal);
+      disclaimerAccept.addEventListener('click', hideDisclaimerModal);
+
+      // Show modal on page load if not previously acknowledged
+      window.addEventListener('load', () => {
+        setTimeout(showDisclaimerModal, 500);
       });
     </script>
 
