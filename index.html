@@ -70,40 +70,58 @@
     </section>
       <!-------Slider-->
       <div id="home">
-        <div id="headerSlider" class="carousel slide" data-bs-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-bs-target="#headerSlider" data-bs-slide-to="0" class="active" aria-current="true"></li>
-            <li data-bs-target="#headerSlider" data-bs-slide-to="1"></li>
-            <li data-bs-target="#headerSlider" data-bs-slide-to="2"></li>
-          </ol>
+        <div id="headerSlider" class="carousel slide hero-slider" data-bs-ride="carousel" data-bs-touch="true">
+          <div class="carousel-indicators hero-indicators">
+            <button type="button" data-bs-target="#headerSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Powering homes and businesses"></button>
+            <button type="button" data-bs-target="#headerSlider" data-bs-slide-to="1" aria-label="Safe licensed electrical work"></button>
+            <button type="button" data-bs-target="#headerSlider" data-bs-slide-to="2" aria-label="Smart upgrades and clean installs"></button>
+          </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
               <picture>
                 <source media="(max-width: 768px)" srcset="image/slider-power-1-mobile.svg">
-                <img src="image/slider-power-1.svg" class="d-block w-100" alt="Transmission towers powering homes and businesses" style="height: 100vh; object-fit: cover;">
+                <img src="image/slider-power-1.svg" class="d-block w-100 hero-slide-image" alt="Transmission towers powering homes and businesses">
               </picture>
                 <div class="carousel-caption">
+                  <p class="hero-kicker">Residential & Commercial</p>
                   <h5><span class="accent">Powering</span> Homes & Businesses</h5>
+                  <p class="hero-copy">Licensed electrical work for safer panels, cleaner installs, and dependable service calls.</p>
+                  <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Request Service</a>
+                    <a href="#services" class="btn btn-outline-light">View Services</a>
+                  </div>
                 </div>
                 <a href="#about" class="carousel-arrow" title="Learn more about us" aria-label="Learn more about us"><i class="fas fa-chevron-down" aria-hidden="true"></i></a>
             </div>
             <div class="carousel-item">
               <picture>
                 <source media="(max-width: 768px)" srcset="image/slider-power-2-mobile.svg">
-                <img src="image/slider-power-2.svg" class="d-block w-100" alt="Smart meter and digital grid infrastructure" style="height: 100vh; object-fit: cover;">
+                <img src="image/slider-power-2.svg" class="d-block w-100 hero-slide-image" alt="Smart meter and digital grid infrastructure">
               </picture>
               <div class="carousel-caption">
+                <p class="hero-kicker">Code-Ready Workmanship</p>
                 <h5><span class="accent">Safe.</span> Licensed. <span class="accent">On Time.</span></h5>
+                <p class="hero-copy">Modern diagnostics and practical planning for projects that need to stay moving.</p>
+                <div class="hero-actions">
+                  <a href="#contact" class="btn btn-primary">Book a Visit</a>
+                  <a href="#price" class="btn btn-outline-light">See Plans</a>
+                </div>
               </div>
               <a href="#about" class="carousel-arrow" title="Learn more about us" aria-label="Learn more about us"><i class="fas fa-chevron-down" aria-hidden="true"></i></a>
             </div>
             <div class="carousel-item">
               <picture>
                 <source media="(max-width: 768px)" srcset="image/slider-power-3-mobile.svg">
-                <img src="image/slider-power-3.svg" class="d-block w-100" alt="Wind turbines generating renewable energy" style="height: 100vh; object-fit: cover;">
+                <img src="image/slider-power-3.svg" class="d-block w-100 hero-slide-image" alt="Wind turbines generating renewable energy">
               </picture>
               <div class="carousel-caption">
+                <p class="hero-kicker">Future-Ready Electrical</p>
                 <h5><span class="accent">Smart</span> Upgrades, <span class="accent">Clean</span> Installs</h5>
+                <p class="hero-copy">Efficient wiring, equipment installs, and upgrade paths designed around real property needs.</p>
+                <div class="hero-actions">
+                  <a href="#services" class="btn btn-primary">Explore Work</a>
+                  <a href="about.html" class="btn btn-outline-light">About Us</a>
+                </div>
               </div>
               <a href="#about" class="carousel-arrow" title="Learn more about us" aria-label="Learn more about us"><i class="fas fa-chevron-down" aria-hidden="true"></i></a>
             </div>
