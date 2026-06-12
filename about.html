@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About Premiere Electric - Learn our company story, mission, and team">
+    <meta name="color-scheme" content="light dark">
     <title>About Us - Premiere Electric</title>
-    <link rel="stylesheet" href="main.css">
+    <script>
+      document.documentElement.classList.toggle(
+        'is-safari',
+        /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+      );
+    </script>
     <!-- Bootstrap 5.3.0 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome 6.4.0 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="logos/premiere-electric-favicon.svg">
     <link rel="alternate icon" href="logos/favicon.ico">
@@ -32,7 +39,7 @@
         }
         .subtitle {
             font-size: 20px;
-            color: #ff9500;
+            color: var(--accent);
             font-weight: 500;
         }
         #company-overview, #services-overview, #certifications {
@@ -41,7 +48,7 @@
         }
         #company-overview h2, #company-history h2, #company-leadership h2, #services-overview h2, #certifications h2, #expansion-plans h2 {
             text-align: center;
-            color: #555555;
+            color: var(--text);
             padding-bottom: 10px;
             margin-bottom: 50px;
             font-size: 36px;
@@ -49,7 +56,7 @@
         }
         #company-overview h2::after, #company-history h2::after, #company-leadership h2::after, #services-overview h2::after, #certifications h2::after, #expansion-plans h2::after {
             content: '';
-            background: #007bff;
+            background: var(--brand);
             display: block;
             height: 3px;
             width: 170px;
@@ -57,7 +64,7 @@
         }
         .section-intro {
             font-size: 16px;
-            color: #666;
+            color: var(--text-muted);
             line-height: 1.8;
             margin-bottom: 30px;
             text-align: center;
@@ -71,47 +78,47 @@
         .mission-item {
             text-align: center;
             padding: 30px;
-            background: #f9f9f9;
+            background: var(--section-bg);
             border-radius: 8px;
             transition: 0.3s;
         }
         .mission-item:hover {
-            background: #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: var(--surface);
+            box-shadow: var(--shadow-card);
         }
         .mission-icon {
             font-size: 48px;
-            color: #007bff;
+            color: var(--brand);
             margin-bottom: 15px;
         }
         .mission-item h4 {
-            color: #555;
+            color: var(--text);
             font-weight: bold;
             margin-bottom: 15px;
         }
         .mission-item p {
-            color: #999;
+            color: var(--text-subtle);
             font-size: 14px;
         }
         #company-history, #company-leadership {
-            background: #f9f9f9;
+            background: var(--section-bg);
             padding-top: 70px;
             padding-bottom: 70px;
         }
         .history-content h3, .leadership-intro + .leadership-item h3 {
-            color: #007bff;
+            color: var(--brand);
             font-weight: bold;
             margin-top: 25px;
             margin-bottom: 15px;
         }
         .history-content p, .leadership-intro p {
-            color: #666;
+            color: var(--text-muted);
             line-height: 1.8;
             margin-bottom: 15px;
             font-size: 15px;
         }
         .leadership-item {
-            background: #fff;
+            background: var(--surface);
             padding: 30px;
             margin-bottom: 30px;
             border-radius: 8px;
@@ -119,22 +126,22 @@
         }
         .leadership-icon {
             font-size: 40px;
-            color: #ff9500;
+            color: var(--accent);
             margin-bottom: 15px;
         }
         .leadership-item h3 {
-            color: #1a3a52;
+            color: var(--brand-deep);
             font-weight: bold;
             margin-bottom: 5px;
         }
         .leadership-item .title {
-            color: #ff9500;
+            color: var(--accent);
             font-weight: bold;
             font-size: 14px;
             margin-bottom: 15px;
         }
         .leadership-item .bio {
-            color: #666;
+            color: var(--text-muted);
             line-height: 1.8;
             margin: 0;
         }
@@ -144,26 +151,26 @@
         }
         .service-list li {
             padding: 12px 0;
-            color: #666;
-            border-bottom: 1px solid #eee;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-muted);
             font-size: 15px;
         }
         .service-list li i {
-            color: #007bff;
+            color: var(--brand);
             margin-right: 12px;
             font-weight: bold;
         }
         #services-overview h3 {
-            color: #1a3a52;
+            color: var(--brand-deep);
             font-weight: bold;
             margin-bottom: 20px;
         }
         .cert-item {
             text-align: center;
             padding: 30px;
-            background: #fff;
+            background: var(--surface);
             border-radius: 8px;
-            border-top: 4px solid #007bff;
+            border-top: 4px solid var(--brand);
             transition: 0.3s;
         }
         .cert-item:hover {
@@ -171,16 +178,16 @@
         }
         .cert-item i {
             font-size: 36px;
-            color: #ff9500;
+            color: var(--accent);
             margin-bottom: 15px;
         }
         .cert-item h4 {
-            color: #1a3a52;
+            color: var(--brand-deep);
             font-weight: bold;
             margin-bottom: 10px;
         }
         .cert-item p {
-            color: #999;
+            color: var(--text-subtle);
             font-size: 14px;
             margin: 0;
         }
@@ -196,13 +203,13 @@
         .timeline-item {
             padding: 25px;
             margin-bottom: 25px;
-            background: #fff;
-            border-left: 5px solid #007bff;
+            background: var(--surface);
+            border-left: 5px solid var(--brand);
             border-radius: 4px;
         }
         .timeline-marker {
             display: inline-block;
-            background: #007bff;
+            background: var(--brand);
             color: #fff;
             padding: 5px 15px;
             border-radius: 20px;
@@ -211,12 +218,12 @@
             margin-bottom: 10px;
         }
         .timeline-item h4 {
-            color: #1a3a52;
+            color: var(--brand-deep);
             font-weight: bold;
             margin: 10px 0;
         }
         .timeline-item p {
-            color: #666;
+            color: var(--text-muted);
             margin: 0;
             font-size: 14px;
         }
@@ -238,7 +245,7 @@
         .cta-content p {
             font-size: 18px;
             margin-bottom: 30px;
-            color: #ccc;
+            color: rgba(255,255,255,0.78);
         }
         .cta-content .btn-outline-primary {
             border-color: #fff;
@@ -256,7 +263,12 @@
     <section id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light sticky-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html#home"><img src="logos/premiere-electric-logo-full.svg" alt="Premiere Electric" height="60"></a>
+                <a class="navbar-brand" href="index.html#home">
+                  <picture>
+                    <source srcset="logos/premiere-electric-logo-light.svg" media="(prefers-color-scheme: dark)">
+                    <img src="logos/premiere-electric-logo-full.svg" alt="Premiere Electric" height="60">
+                  </picture>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -293,7 +305,10 @@
     <section id="about-header">
         <div class="container">
             <div class="about-header-content">
-                <img src="logos/premiere-electric-logo-full.svg" alt="Premiere Electric" class="about-logo">
+                <picture>
+                    <source srcset="logos/premiere-electric-logo-light.svg" media="(prefers-color-scheme: dark)">
+                    <img src="logos/premiere-electric-logo-full.svg" alt="Premiere Electric" class="about-logo">
+                </picture>
                 <h1>About Premiere Electric</h1>
                 <p class="subtitle">Professional Electrical Contracting Excellence</p>
             </div>
